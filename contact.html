@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Contact Us | BIOMED SOLUTIONS</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+        <style>
+            :root {
+                --primary: #005f8c;
+                --secondary: #00a0e1;
+                --accent: #ff6b00;
+                --light: #f8f9fa;
+                --dark: #212529;
+                --gray: #6c757d;
+                --white: #ffffff;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Poppins', sans-serif;
+                line-height: 1.6;
+                color: var(--dark);
+                background-color: var(--light);
+            }
+            
+            .main-header {
+                background-color: var(--white);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 5%;
+            }
+            
+            #logo img {
+                height: 100px;
+                transition: transform 0.3s ease;
+            }
+            
+            #logo img:hover {
+                transform: scale(1.05);
+            }
+            
+            #tabs-top {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            #tabs-top a {
+                text-decoration: none;
+                color: var(--dark);
+                font-weight: 600;
+                font-size: 1.rem;
+                transition: color 0.3s ease;
+                position: relative;
+                padding: 0.5rem 0;
+            }
+            
+            #tabs-top a.active {
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            #tabs-top a.active:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--primary);
+            }
+            
+            #tabs-top a:hover {
+                color: var(--primary);
+            }
+            
+            #tabs-top a:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary);
+                transition: width 0.3s ease;
+            }
+            
+            #tabs-top a:hover:after {
+                width: 100%;
+            }
+            
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .dropbtn {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--dark);
+                padding: 0.5rem 0;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: var(--white);
+                min-width: 200px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                padding-left: 10px;
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                transition: background-color 0.3s ease;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+                color: var(--primary);
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            /* Contact Hero Section */
+            .contact-hero {
+                background: linear-gradient(rgba(0, 95, 140, 0.2), rgba(0, 95, 140, 0.1)), 
+                            url('images/contact-us-banner-2.webp') center/cover no-repeat;
+                padding: 8rem 5% 6rem;
+                text-align: center;
+                color: var(--white);
+            }
+            
+            .contact-hero h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                animation: fadeInDown 1s ease;
+            }
+            
+            .hero-subtext {
+                font-size: 1.3rem;
+                max-width: 700px;
+                margin: 0 auto;
+                opacity: 0.9;
+                animation: fadeInUp 1s ease;
+            }
+            
+            /* Contact Details Section */
+            .contact-details {
+                padding: 4rem 5%;
+                background-color: var(--white);
+            }
+            
+            .contact-details h2 {
+                text-align: center;
+                font-size: 2rem;
+                color: var(--primary);
+                margin-bottom: 3rem;
+                position: relative;
+            }
+            
+            .contact-details h2:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background-color: var(--accent);
+            }
+            
+            .contact-info {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .contact-method {
+                background: var(--light);
+                border-radius: 8px;
+                padding: 2rem;
+                text-align: center;
+                transition: transform 0.3s ease;
+                box-shadow: 0 5px 15px #497c90;
+            }
+            
+            .contact-method:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+            
+            .contact-method img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-method h3 {
+                color: var(--primary);
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+            }
+            
+            .contact-method a, .contact-method p {
+                color: var(--gray);
+                transition: color 0.3s ease;
+            }
+            
+            .contact-method a:hover {
+                color: var(--accent);
+                text-decoration: none;
+            }
+            
+            /* Contact Form Section */
+            .contact-form-section {
+                padding: 5rem 5%;
+                background-color: var(--light);
+            }
+            
+            .contact-form-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .form-column h2 {
+                font-size: 2rem;
+                color: var(--primary);
+                margin-bottom: 2rem;
+                position: relative;
+            }
+            
+            .form-column h2:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background-color: var(--accent);
+            }
+            
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .form-group label {
+                font-weight: 500;
+                color: var(--dark);
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 12px 15px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-family: inherit;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 2px rgba(0, 95, 140, 0.1);
+            }
+            
+            .form-group textarea {
+                resize: vertical;
+                min-height: 150px;
+            }
+            
+            .submit-btn {
+                background-color: var(--primary);
+                color: var(--white);
+                border: none;
+                padding: 14px 25px;
+                border-radius: 4px;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                align-self: flex-start;
+            }
+            
+            .submit-btn:hover {
+                background-color: var(--secondary);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Contact Details Column */
+            .contact-details-column h3 {
+                font-size: 1.5rem;
+                color: var(--primary);
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-info-item {
+                background-color: var(--white);
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                height: 100%;
+            }
+            
+            .contact-info-item p {
+                color: var(--gray);
+                line-height: 1.8;
+            }
+            
+            /* Brands Section */
+            #Brands {
+                padding: 5rem 5%;
+                background-color: var(--white);
+                text-align: center;
+            }
+            
+            #Brands h2 {
+                font-size: 2rem;
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+            
+            #Brands p {
+                color: var(--gray);
+                max-width: 800px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+            }
+            
+            .brand-logos {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
+                align-items: center;
+            }
+            
+            .brand-logos img {
+                height: 60px;
+                filter: grayscale(5%);
+                opacity: 0.7;
+                transition: all 0.3s ease;
+            }
+            
+            .brand-logos img:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            
+            footer {
+                background-color: var(--primary);
+                color: var(--white);
+                text-align: center;
+                padding: 2rem;
+                font-size: 0.9rem;
+            }
+            
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .contact-form-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .main-header {
+                    flex-direction: column;
+                    padding: 1rem;
+                }
+                
+                #tabs-top {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 1rem;
+                }
+                
+                .contact-hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .hero-subtext {
+                    font-size: 1.1rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .contact-hero {
+                    padding: 6rem 2rem 4rem;
+                }
+                
+                .contact-details, .contact-form-section, #Brands {
+                    padding: 3rem 2rem;
+                }
+                
+                .contact-hero h1 {
+                    font-size: 2rem;
+                }
+                
+                .brand-logos img {
+                    height: 40px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="main-header">
+            <div id="logo">
+                <img src="images/Logo.png" alt="BIOMED SOLUTIONS Logo" />
+            </div>
+
+            <nav id="tabs-top">
+                <a href="index.html" id="home-link">Home</a>
+                <a href="about.html" id="about-link">About Us</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Products ▾</a>
+                    <div class="dropdown-content">
+                        <a href="casualty.html">General & Casualty</a>
+                        <a href="critical.html">Critical Care</a>
+                        <a href="cssd.html">CSSD</a>
+                        <a href="lab.html">Laboratory</a>
+                        <a href="opt.html">Operating Theatre</a>
+                        <a href="paeds.html">Paediatrics & Maternity</a>
+                        <a href="radiology.html">Radiology</a>
+                        <a href="dental.html">Dental</a>
+                        <a href="oxygen.html">PSA Plants & MGPS</a>
+                    </div>
+                </div>
+                
+                <a href="tech.html" id="tech-link">Support & Service</a>
+                <a href="contact.html" id="contact-link" class="active">Contact Us</a>
+            </nav>
+        </header>
+        
+        <main id="contact-page">
+            <section class="contact-hero">
+                <div class="container">
+                    <h1>GET IN TOUCH</h1>
+                    <p class="hero-subtext">If you need to talk to us, please email us and we will contact you.</p>
+                </div>
+            </section>
+
+            <section class="contact-details">
+                <div class="container">
+                    <h2>Contact BIOMED SOLUTIONS Support Team</h2>
+                    
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <img src="images/email.jpeg" alt="Email Icon">
+                            <h3>Email</h3>
+                            <a href="mailto:biomedholdings@gmail.com">biomedholdings@gmail.com</a>
+                        </div>
+                    
+                        <div class="contact-method">
+                            <img src="images/add.jpeg" alt="Address Icon">
+                            <h3>Address</h3>
+                            <p>Maqalika Street, Maseru East, Maseru, Lesotho</p>
+                        </div>
+                    
+                        <div class="contact-method">
+                            <img src="images/app2.jpeg" alt="WhatsApp Icon">
+                            <h3>Call/Whatsapp</h3>
+                            <a href="https://wa.me/26662780738">+266 6326 8485 / 6278 0738</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="contact-form-section">
+                <div class="container">
+                    <div class="contact-form-container">
+                        <div class="form-column">
+                            <h2>Send Us a Message</h2>
+                            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                                <input type="hidden" name="access_key" value="df62c8d0-dbed-407c-a32e-79866420fcd4">
+                                <div class="form-group">
+                                    <label for="name">Your Name*</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email*</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Your Phone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message*</label>
+                                    <textarea id="message" name="message" rows="6" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Submit Now</button>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-details-column">
+                            <h3>Need Assistance? Reach Out Today.</h3>
+                            <div class="contact-info-item">
+                                <p>
+                                    If you have any questions, need support, or would like more information about our
+                                    products and services, we're here to help. Feel free to contact us via email, visit
+                                    us at our address, or reach out on WhatsApp for quick assistance. Our team is always
+                                    ready to provide the guidance and support you need.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="Brands">
+            <h2>Trusted Brand Partners</h2>
+            <p>Biomed Solutions offers a wide range of products from leading global manufacturers, ensuring quality and reliability.</p>
+            <div class="brand-logos">
+                <img src="images/brand-amcaremed.png" alt="Amcaremed" />
+                <img src="images/brand-bailian.jpeg" alt="Bailian" />
+                <img src="images/brand-comen.jpeg" alt="Comen" />
+                <img src="images/brand-novos.png" alt="Novos" />
+                <img src="images/brand-sada.jpeg" alt="Sada" />
+                <img src="images/seca-brand.png" alt="Seca" />
+                <img src="images/b-braun-brand.png" alt="B Braun" />
+                <img src="images/rix-brand.png" alt="Rix" />
+                <img src="images/enmind-brand.png" alt="Enmind" />
+                <img src="images/vayu-brand.png" alt="Vayu" />
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // Highlight current page in navigation
+            document.addEventListener('DOMContentLoaded', function() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                
+                document.querySelectorAll('#tabs-top > a:not(.dropbtn)').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                const pageMap = {
+                    'index.html': 'home-link',
+                    'about.html': 'about-link',
+                    'tech.html': 'tech-link',
+                    'contact.html': 'contact-link',
+                };
+                
+                if (pageMap[currentPage]) {
+                    document.getElementById(pageMap[currentPage]).classList.add('active');
+                }
+                
+                const dropdownPages = [
+                    'casualty.html', 'critical.html', 'cssd.html', 'lab.html', 
+                    'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+                ];
+                
+                if (dropdownPages.includes(currentPage)) {
+                    document.querySelector('.dropbtn').classList.add('active');
+                }
+            });
+        </script>
+    </body>
+</html>

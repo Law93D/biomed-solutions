@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>About Us | BIOMED SOLUTIONS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <style>
+        :root {
+            --primary: #005f8c;
+            --secondary: #00a0e1;
+            --accent: #ff6b00;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+        
+        #logo img {
+            height: 100px;
+            transition: transform 0.3s ease;
+        }
+        
+        #logo img:hover {
+            transform: scale(1.05);
+        }
+        
+        #tabs-top {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        #tabs-top a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        #tabs-top a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        #tabs-top a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        #tabs-top a:hover {
+            color: var(--primary);
+        }
+        
+        #tabs-top a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        #tabs-top a:hover:after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--dark);
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-left: 10px;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--primary);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* About Page Specific Styles */
+        #about-section {
+            padding: 5rem 5%;
+            background-color: var(--white);
+        }
+        
+        .about-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .about-heading:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto;
+        }
+        
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        #who-we-are, #our-expertise {
+            flex: 1;
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        #who-we-are:hover, #our-expertise:hover {
+            transform: translateY(-5px);
+        }
+        
+        #who-we-are h3, #our-expertise h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .about-who, .about-expertise {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .vision-mission-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 5rem 5%;
+            color: var(--white);
+        }
+        
+        .vision-mission-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .vision-mission-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .vision-mission-box h2:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .vision-mission-box p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        #Brands {
+            padding: 5rem 5%;
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        #Brands h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        #Brands p {
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .brand-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .brand-logos img {
+            height: 60px;
+            filter: grayscale(5%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-logos img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            #tabs-top {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #about-section, .vision-mission-section, #Brands {
+                padding: 3rem 2rem;
+            }
+            
+            .vision-mission-box {
+                padding: 2rem;
+            }
+            
+            .brand-logos img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div id="logo">
+            <img src="images/Logo.png" alt="BIOMED SOLUTIONS Logo" />
+        </div>
+
+        <nav id="tabs-top">
+            <a href="index.html" id="home-link">Home</a>
+            <a href="about.html" id="about-link" class="active">About Us</a>
+            
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Products ▾</a>
+                <div class="dropdown-content">
+                    <a href="casualty.html">General & Casualty</a>
+                    <a href="critical.html">Critical Care</a>
+                    <a href="cssd.html">CSSD</a>
+                    <a href="lab.html">Laboratory</a>
+                    <a href="opt.html">Operating Theatre</a>
+                    <a href="paeds.html">Paeds & Maternity</a>
+                    <a href="radiology.html">Radiology</a>
+                    <a href="dental.html">Dental</a>
+                    <a href="oxygen.html">PSA & MGPS</a>
+                </div>
+            </div>
+            
+            <a href="tech.html" id="tech-link">Support & Service</a>
+            <a href="contact.html" id="contact-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="about-section">
+        <div class="about-info-box">
+            <h1 class="about-heading">About Us</h1>
+            
+            <div class="about-container">
+                <div id="who-we-are">
+                    <h3>Who We Are!</h3>
+                    <p class="about-who">
+                        Biomed Solutions, is a dynamic medical technology service provider committed to
+                        strengthening healthcare systems through reliable, affordable, and sustinable
+                        biomedical support. Established in Lesotho, our operations span equipment repair,
+                        preventive maintenance, technical support and the supply of medical equipment
+                        and consumables.
+                        <br><br>
+                        Our goal is simple: keep life saving equipment working optimally - because healthcare
+                        doesn't wait. We are driven by a vision to empower healthcare systems with innovative 
+                        technology. We pride ourselves on offering a diverse and essential product portfolio
+                        that reflects the real needs of healthcare facilities across Lesotho. Our product range
+                        includes diagnostic, therapeutic, surgical, and patient care equipment, as well as the
+                        consumables and accessories needed for daily operations.
+                    </p>
+                </div>
+            
+                <div id="our-expertise">
+                    <h3>Our Expertise!</h3>
+                    <p class="about-expertise">
+                        Biomed Solutions offers a comprehensive range of biomedical services and supplies tailored
+                        to meet the unique healthcare needs of Lesotho. We bring specialized expertise in sourcing,
+                        installing, and maintaining a wide range of medical, laboratory, and dental equipment.
+                        <br><br>
+                        Our team has hands-on experience with complex medical gas infrastructure—such as PSA oxygen
+                        plants, manifolds, and MGPS networks—as well. We offer in-depth consultancy, training, and 
+                        compliance support to ensure every solution is functional, safe, and aligned with healthcare 
+                        standards. With a strong focus on operational reliability and client satisfaction, we deliver 
+                        practical, tailored solutions that keep critical systems running efficiently.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="vision-mission-section">
+        <div class="vision-mission-box">
+            <h2>Our Vision</h2>
+            <p>
+                To be the leading force in transforming healthcare delivery across
+                Southern Africa — through innovative technologies, sustainable practices,
+                skilled local talent, and strategic partnerships that bridge gaps in medical
+                access, safety, and service excellence.
+            </p>
+            
+            <h2>Our Mission</h2>
+            <p>
+                To support and strengthen healthcare systems by delivering high-quality
+                medical and laboratory equipment, sustainable consumables, expert consultancy,
+                and hands-on technical services. We are committed to empowering local professionals
+                through training and partnering with public and private stakeholders to build
+                resilient, efficient, and equitable healthcare infrastructure.
+            </p>
+        </div>
+    </section>
+
+    <section id="Brands">
+        <h2>Trusted Brand Partners</h2>
+        <p>Biomed Solutions offers a wide range of products from leading global manufacturers, ensuring quality and reliability.</p>
+        <div class="brand-logos">
+            <img src="images/brand-amcaremed.png" alt="Amcaremed" />
+            <img src="images/brand-bailian.jpeg" alt="Bailian" />
+            <img src="images/brand-comen.jpeg" alt="Comen" />
+            <img src="images/brand-novos.png" alt="Novos" />
+            <img src="images/brand-sada.jpeg" alt="Sada" />
+            <img src="images/seca-brand.png" alt="Seca" />
+            <img src="images/b-braun-brand.png" alt="B|Braun" />
+            <img src="images/rix-brand.png" alt="Rix" />
+            <img src="images/enmind-brand.png" alt="Enmind" />
+            <img src="images/vayu-brand.png" alt="Vayu" />
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            document.querySelectorAll('#tabs-top > a:not(.dropbtn)').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const pageMap = {
+                'index.html': 'home-link',
+                'about.html': 'about-link',
+                'tech.html': 'tech-link',
+                'contact.html': 'contact-link',
+            };
+            
+            if (pageMap[currentPage]) {
+                document.getElementById(pageMap[currentPage]).classList.add('active');
+            }
+            
+            const dropdownPages = [
+                'casualty.html', 'critical.html', 'cssd.html', 'lab.html', 
+                'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+            ];
+            
+            if (dropdownPages.includes(currentPage)) {
+                document.querySelector('.dropbtn').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
