@@ -5,7 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>BIOMED SOLUTIONS | Medical Equipment & Services</title>
         <link rel="stylesheet" href="style.css" />
-        <style>  
+        <style>
+        .dropdown-content {
+                display: none;
+            }
+            .dropdown-content.show {
+                display: block;
+            } 
         </style>
     </head>
     <body>
@@ -137,5 +143,28 @@
         <footer>
             <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
         </footer>
+
+        <!-- JavaScript to make page interactive -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const dropBtn = document.querySelector(".dropbtn");
+                const dropContent = document.querySelector(".dropdown-content");
+
+                if (dropBtn && dropContent) {
+                    dropBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        dropContent.classList.toggle("show");
+                    });
+
+                window.addEventListener("click", function (e) {
+                    if (!e.target.matches('.dropbtn')) {
+                        if (dropContent.classList.contains("show")) {
+                            dropContent.classList.remove("show");
+                        }
+                    }
+                });
+            }
+        });
+        </script>
     </body>
 </html>
