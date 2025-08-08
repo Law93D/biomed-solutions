@@ -462,10 +462,10 @@ footer {
 /* Gallery Section - Original Style */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 per row, responsive */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 per row, responsive */
     gap: 2rem;
     padding: 0 20px;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
