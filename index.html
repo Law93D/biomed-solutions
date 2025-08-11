@@ -6,44 +6,128 @@
         <title>BIOMED SOLUTIONS | Medical Equipment & Services</title>
         <link rel="stylesheet" href="style.css" />
         <style>
-        .dropdown-content {
+
+            /* Hide the hamburger menu on desktop */
+            .hamburger-menu {
                 display: none;
+                flex-direction: column;
+                cursor: pointer;
+                width: 30px;
+                height: 25px;
+                justify-content: space-between;
             }
-            .dropdown-content.show {
+
+            .hamburger-menu span {
                 display: block;
-            } 
+                height: 3px;
+                background-color: #6F86FF;
+                border-radius: 25px;
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            }
+
+            /* Animate the hamburger menu to an "X" when active */
+            .hamburger-menu.active span:nth-child(1) {
+                transform: translateY(11px) rotate(45deg);
+            }
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active span:nth-child(3) {
+                transform: translateY(-11px) rotate(-45deg);
+            }
+        
+            /* On larger screens, the main nav is visible and the hamburger menu is hidden */
+            @media (min-width: 993px) {
+                #tabs-top {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                }
+            }
+
+            /* Mobile styles */
+            @media (max-width: 992px) {
+                .main-header .header-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                }
+                
+                .hamburger-menu {
+                    display: flex; /* Show the hamburger menu on mobile */
+                }
+                
+                #tabs-top {
+                    display: none; /* Hide the main nav links by default on mobile */
+                    flex-direction: column;
+                    background-color: white;
+                    position: fixed;
+                    top: 100px; /* Adjust based on your header height */
+                    left: 0;
+                    width: 100%;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    padding: 1rem 0;
+                    text-align: center;
+                }
+                
+                #tabs-top.active {
+                    display: flex; /* Show the navigation menu when 'active' class is present */
+                }
+
+                #tabs-top a, .dropdown .dropbtn {
+                    padding: 0;
+                    width: 100%;
+                }
+
+                .dropdown-content {
+                    position: static;
+                    width: 100%;
+                    box-shadow: none;
+                    background-color: #f8f9fa; /* A slightly different color for the dropdown */
+                }
+            }
         </style>
     </head>
     <body>
         <header class="main-header">
-            <div id="logo">
-                <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
-            </div>
+            <div class="header-container">
 
-            <nav id="tabs-top">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Products ▾</a>
-                    <div class="dropdown-content">
-                        <a href="casualty.html">General & Casualty</a>
-                        <a href="critical.html">Critical Care</a>
-                        <a href="cssd.html">CSSD</a>
-                        <a href="lab.html">Laboratory</a>
-                        <a href="opt.html">Operating Theatre</a>
-                        <a href="paeds.html">Paeds & Maternity</a>
-                        <a href="radiology.html">Radiology</a>
-                        <a href="dental.html">Dental</a>
-                        <a href="oxygen.html">PSA & MGPS</a>
-                    </div>
+                <div id="logo">
+                    <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
                 </div>
-                
-                <a href="tech.html">Support & Services</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
+
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav id="tabs-top">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="casualty.html">General & Casualty</a>
+                            <a href="critical.html">Critical Care</a>
+                            <a href="cssd.html">CSSD</a>
+                            <a href="lab.html">Laboratory</a>
+                            <a href="opt.html">Operating Theatre</a>
+                            <a href="paeds.html">Paeds & Maternity</a>
+                            <a href="radiology.html">Radiology</a>
+                            <a href="dental.html">Dental</a>
+                            <a href="oxygen.html">PSA & MGPS</a>
+                        </div>
+                    </div>
+            
+                    <a href="tech.html">Support & Services</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
         </header>
-        
+    
         <section class="hero">
             <img src="images/home-page-pic.jpg" alt="Modern medical equipment" />
             <div class="hero-tagline">
@@ -54,7 +138,7 @@
 
         <section id="about">
             <img src="images/telescope.png" alt="Company vision" />
-            
+        
             <div id="about-text">
                 <h2>Welcome to Biomed Solutions</h2>
                 <p>
@@ -69,13 +153,13 @@
         <section id="services">
             <h2>What We Offer</h2>
             <p>Biomed Solutions offers a wide range of products. Below are some of the products that we offer.</p>
-            
+        
             <div class="services-grid">
                 <div class="info-box" style="background-image: url('images/general-ward.jpeg')">
                     <h3>General & Casualty</h3>
                     <button onclick="window.location.href='casualty.html'">Discover More</button>
                 </div>
-                
+            
                 <div class="info-box" style="background-image: url(images/critical-care-ward.jpeg)">
                     <h3>Critical Care</h3>
                     <button onclick="window.location.href='critical.html'">Discover More</button>
@@ -105,7 +189,7 @@
                     <h3>Radiology Products</h3>
                     <button onclick="window.location.href='radiology.html'">Discover More</button>
                 </div>
-                
+            
                 <div class="info-box" style="background-image: url(images/dental-ward.jpeg);">
                     <h3>Dental</h3>
                     <button onclick="window.location.href='dental.html'">Discover More</button>
@@ -122,7 +206,7 @@
                 </div>
             </div>
         </section>
-        
+    
         <section id="Brands">
             <h2>Trusted Brand Partners</h2>
             <p>Biomed Solutions offers a wide range of products from leading global manufacturers, ensuring quality and reliability.</p>
@@ -139,38 +223,51 @@
                 <img src="images/vayu-brand.png" alt="Vayu" />
             </div>
         </section>
-        
+    
         <footer>
             <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
         </footer>
 
-        <!-- START: WhatsApp Floating Button -->
         <a href="https://wa.me/26663268485" class="whatsapp-float" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         </a>
-        <!-- END: WhatsApp Floating Button -->
-
-        <!-- JavaScript to make page interactive -->
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const dropBtn = document.querySelector(".dropbtn");
-                const dropContent = document.querySelector(".dropdown-content");
-
-                if (dropBtn && dropContent) {
-                    dropBtn.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        dropContent.classList.toggle("show");
-                    });
-
-                window.addEventListener("click", function (e) {
-                    if (!e.target.matches('.dropbtn')) {
-                        if (dropContent.classList.contains("show")) {
-                            dropContent.classList.remove("show");
-                        }
+            document.addEventListener('DOMContentLoaded', function() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const tabsTop = document.getElementById('tabs-top');
+                const hamburgerMenu = document.querySelector('.hamburger-menu');
+                const dropBtn = document.querySelector('.dropbtn');
+                const dropdownContent = document.querySelector('.dropdown-content');
+        
+                // Highlight current page
+                document.querySelectorAll('#tabs-top a').forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
                     }
                 });
-            }
-        });
+        
+                // Handle dropdown links separately
+                const dropdownPages = [
+                    'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
+                    'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+                ];
+        
+                // Check if the current page is one of the dropdown pages
+                if (dropdownPages.includes(currentPage)) {
+                    // Add the 'active' class to the dropdown button
+                    if (dropBtn) {
+                        dropBtn.classList.add('active');
+                    }
+                }
+        
+                // This is the new, corrected logic for the mobile menu
+                if (hamburgerMenu && tabsTop) {
+                    hamburgerMenu.addEventListener('click', () => {
+                        hamburgerMenu.classList.toggle('active');
+                        tabsTop.classList.toggle('active');
+                    });
+                }
+            });
         </script>
     </body>
 </html>

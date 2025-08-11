@@ -30,120 +30,154 @@
             }
             
             .main-header {
-                background-color: var(--white);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                position: sticky;
-                top: 0;
-                z-index: 1000;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed; /* fixed for always visible */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 1000;
+            padding: 0.5rem 8%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        #logo img {
+            max-height: 102px;
+            transition: transform 0.3s ease;
+        }
+        #logo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation - Desktop */
+        #tabs-top {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        #tabs-top a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        #tabs-top a.active {
+            color: var(--primary);
+        }
+        #tabs-top a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+           background-color: var(--primary);
+        }
+        #tabs-top a:hover {
+            color: var(--primary);
+        }
+        #tabs-top a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        #tabs-top a:hover:after {
+            width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.5rem;
+            font-weight: 50;
+            color: var(--dark);
+            padding: 0.5rem 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-left: 30px;
+        }
+        .dropdown-content a {
+            color: var(--dark);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--primary);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hamburger Menu - hidden on desktop */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger-menu .bar {
+            height: 3px;
+            width: 25px;
+            background-color: var(--dark);
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hamburger-menu {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.5rem 8%;
             }
-            
-            #logo img {
-                height: 100px;
-                transition: transform 0.3s ease;
-            }
-            
-            #logo img:hover {
-                transform: scale(1.05);
-            }
-            
             #tabs-top {
-                display: flex;
-                align-items: center;
-                gap: 1.5rem;
-            }
-            
-            #tabs-top a {
-                text-decoration: none;
-                color: var(--dark);
-                font-weight: 600;
-                font-size: 1rem;
-                transition: color 0.3s ease;
-                position: relative;
-                padding: 0.5rem 0;
-            }
-            
-            #tabs-top a.active {
-                color: var(--primary);
-                font-weight: 600;
-            }
-            
-            #tabs-top a.active:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: var(--primary);
-            }
-            
-            #tabs-top a:hover {
-                color: var(--primary);
-            }
-            
-            #tabs-top a:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: var(--primary);
-                transition: width 0.3s ease;
-            }
-            
-            #tabs-top a:hover:after {
-                width: 100%;
-            }
-            
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-            
-            .dropbtn {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-                font-family: inherit;
-                font-size: 1rem;
-                font-weight: 500;
-                color: var(--dark);
-                padding: 0.5rem 0;
-            }
-            
-            .dropdown-content {
                 display: none;
-                position: absolute;
+                flex-direction: column;
                 background-color: var(--white);
-                min-width: 200px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-                z-index: 1;
-                border-radius: 10px;
-                overflow: hidden;
-                padding-left: 10px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1rem 0;
             }
-            
-            .dropdown-content a {
-                color: var(--dark);
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                transition: background-color 0.3s ease;
+            #tabs-top.show {
+                display: flex;
             }
-            
-            .dropdown-content a:hover {
-                background-color: #f1f1f1;
-                color: var(--primary);
-            }
-            
             .dropdown:hover .dropdown-content {
-                display: block;
+                position: static;
+                box-shadow: none;
             }
+        }
             
             /* Support Hero Section */
             #support-hero {
@@ -159,6 +193,7 @@
                 text-align: center;
                 color: var(--white);
                 padding: 0 2rem;
+                margin-top: 120px;
             }
             
             .hero-tagline h1 {
@@ -462,32 +497,45 @@
     </head>
     <body>
         <header class="main-header">
-            <div id="logo">
-                <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
-            </div>
+            <div class="header-container">
 
-            <nav id="tabs-top">
-                <a href="index.html" id="home-link">Home</a>
-                <a href="about.html" id="about-link">About Us</a>
-                
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Products ▾</a>
-                    <div class="dropdown-content">
-                        <a href="casualty.html">General & Casualty</a>
-                        <a href="critical.html">Critical Care</a>
-                        <a href="cssd.html">CSSD</a>
-                        <a href="lab.html">Laboratory</a>
-                        <a href="opt.html">Operating Theatre</a>
-                        <a href="paeds.html">Paeds & Maternity</a>
-                        <a href="radiology.html">Radiology</a>
-                        <a href="dental.html">Dental</a>
-                        <a href="oxygen.html">PSA & MGPS</a>
-                    </div>
+                <!-- Logo -->
+                <div id="logo">
+                    <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
                 </div>
-                
-                <a href="tech.html" id="tech-link" class="active">Support & Service</a>
-                <a href="contact.html" id="contact-link">Contact Us</a>
-            </nav>
+
+                <!-- Hamburger Icon -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <!-- Navigation -->
+                <nav id="tabs-top">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="casualty.html">General & Casualty</a>
+                            <a href="critical.html">Critical Care</a>
+                            <a href="cssd.html">CSSD</a>
+                            <a href="lab.html">Laboratory</a>
+                            <a href="opt.html">Operating Theatre</a>
+                            <a href="paeds.html">Paeds & Maternity</a>
+                            <a href="radiology.html">Radiology</a>
+                            <a href="dental.html">Dental</a>
+                            <a href="oxygen.html">PSA & MGPS</a>
+                        </div>
+                    </div>
+            
+                    <a href="tech.html">Support & Services</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+
+            </div>
         </header>
         
         <section id="support-hero" class="hero">
@@ -592,34 +640,35 @@
         <!-- END: WhatsApp Floating Button -->
 
         <script>
-            // Highlight current page in navigation
             document.addEventListener('DOMContentLoaded', function() {
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                
-                document.querySelectorAll('#tabs-top > a:not(.dropbtn)').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                const pageMap = {
-                    'index.html': 'home-link',
-                    'about.html': 'about-link',
-                    'tech.html': 'tech-link',
-                    'contact.html': 'contact-link',
-                };
-                
-                if (pageMap[currentPage]) {
-                    document.getElementById(pageMap[currentPage]).classList.add('active');
-                }
-                
-                const dropdownPages = [
-                    'casualty.html', 'critical.html', 'cssd.html', 'lab.html', 
-                    'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
-                ];
-                
-                if (dropdownPages.includes(currentPage)) {
-                    document.querySelector('.dropbtn').classList.add('active');
+
+                // Select all top-level navigation links and iterate through them
+                document.querySelectorAll('#tabs-top > a').forEach(link => {
+                    // Check if the link's href matches the current page
+                    if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
                 }
             });
-        </script>
+
+        // Handle dropdown links separately
+        const dropdownPages = [
+            'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
+            'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+        ];
+
+            // Check if the current page is one of the dropdown pages
+            if (dropdownPages.includes(currentPage)) {
+                // Add the 'active' class to the dropdown button
+                document.querySelector('.dropbtn').classList.add('active');
+            }
+
+            // Toggle mobile menu visibility
+            window.toggleMenu = function() {
+                const tabsTop = document.getElementById('tabs-top');
+                tabsTop.classList.toggle('show');
+            }
+        });
+    </script>
     </body>
 </html>

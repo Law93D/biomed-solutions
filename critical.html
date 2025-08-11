@@ -9,32 +9,45 @@
     </head>
     <body>
         <header class="main-header">
-            <div id="logo">
-                <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
-            </div>
+            <div class="header-container">
 
-            <nav id="tabs-top">
-                <a href="index.html" id="home-link">Home</a>
-                <a href="about.html" id="about-link">About Us</a>
-                
-                <div class="dropdown">
-                    <a href="#" class="dropbtn active">Products ▾</a>
-                    <div class="dropdown-content">
-                        <a href="casualty.html" class="active">General & Casualty</a>
-                        <a href="critical.html">Critical Care</a>
-                        <a href="cssd.html">CSSD</a>
-                        <a href="lab.html">Laboratory</a>
-                        <a href="opt.html">Operating Theatre</a>
-                        <a href="paeds.html">Paediatrics & Maternity</a>
-                        <a href="radiology.html">Radiology</a>
-                        <a href="dental.html">Dental</a>
-                        <a href="oxygen.html">PSA Plants & MGPS</a>
-                    </div>
+                <!-- Logo -->
+                <div id="logo">
+                    <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
                 </div>
-                
-                <a href="tech.html" id="tech-link">Support & Service</a>
-                <a href="contact.html" id="contact-link">Contact Us</a>
-            </nav>
+
+                <!-- Hamburger Icon -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <!-- Navigation -->
+                <nav id="tabs-top">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="casualty.html">General & Casualty</a>
+                            <a href="critical.html">Critical Care</a>
+                            <a href="cssd.html">CSSD</a>
+                            <a href="lab.html">Laboratory</a>
+                            <a href="opt.html">Operating Theatre</a>
+                            <a href="paeds.html">Paeds & Maternity</a>
+                            <a href="radiology.html">Radiology</a>
+                            <a href="dental.html">Dental</a>
+                            <a href="oxygen.html">PSA & MGPS</a>
+                        </div>
+                    </div>
+            
+                    <a href="tech.html">Support & Services</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+
+            </div>
         </header>
 
         <main id="casualty-section">
@@ -160,6 +173,14 @@
                 <img src="images/icu-end-tidal-co2-monitor.jpeg" />
                 <p>End-Tidal CO2 Monitors</p>
             </div>
+            <div class="gallery-item">
+                <img src="images/hemodialysis-blood-tubing-set.jpg" />
+                <p>Dialysis Tubing-Sets</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Portable_Hemodialysis.jpeg" />
+                <p>Portable Dialysis Machine</p>
+            </div>
         </section>
 
         <section id="Brands">
@@ -220,6 +241,12 @@
                     document.querySelector(`.dropdown-content a[href="${currentPage}"]`).classList.add('active');
                 }
             });
+
+            // Toggle the mobile menu on click
+            function toggleMenu() {
+                const tabsTop = document.getElementById('tabs-top');
+                tabsTop.classList.toggle('show');
+            }
         </script>
     </body>
 </html>
