@@ -209,6 +209,16 @@
             #business-hours p {
                 margin: 0.2rem 0;
             }
+
+            @media (max-width: 768px) {
+                /* This rule changes the contact form layout to a single column on small screens */
+                .contact-form-container {
+                    grid-template-columns: 1fr;
+                }
+                .contact-form-section {
+                    padding: 3rem 2rem;
+                }
+            }
         </style>
     </head>
     <body>

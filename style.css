@@ -62,7 +62,7 @@ html, body {
 #tabs-top a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 750;
+    font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease;
     position: relative;
