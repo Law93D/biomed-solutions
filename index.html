@@ -6,7 +6,6 @@
         <title>BIOMED SOLUTIONS | Medical Equipment & Services</title>
         <link rel="stylesheet" href="style.css" />
         <style>
-
             /* Hide the hamburger menu on desktop */
             .hamburger-menu {
                 display: none;
@@ -86,6 +85,129 @@
                     box-shadow: none;
                     background-color: #f8f9fa; /* A slightly different color for the dropdown */
                 }
+            }
+
+            /* Contact Form Section */
+            .contact-form-section {
+                padding: 5rem 5%;
+                background-color: var(--light);
+            }
+            
+            .contact-form-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .form-column h2 {
+                font-size: 2rem;
+                color: var(--primary);
+                margin-bottom: 2rem;
+                position: relative;
+            }
+            
+            .form-column h2:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background-color: var(--accent);
+            }
+            
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .form-group label {
+                font-weight: 500;
+                color: var(--dark);
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 12px 15px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-family: inherit;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 2px rgba(0, 95, 140, 0.1);
+            }
+            
+            .form-group textarea {
+                resize: vertical;
+                min-height: 150px;
+            }
+            
+            .submit-btn {
+                background-color: var(--primary);
+                color: var(--white);
+                border: none;
+                padding: 14px 25px;
+                border-radius: 4px;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                align-self: flex-start;
+            }
+            
+            .submit-btn:hover {
+                background-color: rgb(38, 180, 38);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Contact Details Column */
+            .contact-details-column h3 {
+                font-size: 1.5rem;
+                color: white;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-info-item {
+                background-color: rgb(40, 123, 151);
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                height: 100%;
+            }
+            .contact-info-item p {
+                color: white;
+                line-height: 1.5;
+            }
+
+            #business-hours {
+                margin-top: 1rem;
+                font-size: 0.9rem;
+                color: white;
+            }
+
+            #business-hours h4 {
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            #business-hours p {
+                margin: 0.2rem 0;
             }
         </style>
     </head>
@@ -206,6 +328,88 @@
                 </div>
             </div>
         </section>
+
+        <section id="products-info">
+            <div class="product-info-grid">
+                <div class="info-box-2">
+                    <figure class="product-image-container">
+                        <img src="images/Scale_Calibration.webp" alt="Medical equipment" />
+                    </figure>
+
+                    <div class="product-text">
+                        <h2>Medical Equipment & Systems</h2>
+                        <p>
+                            Maximize equipment lifespan and performance with our professional installation, timely maintenance, calibration, and support services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-box-2"">
+                    <figure class="product-image-container">
+                        <img src="images/bottom-image.jpg" alt="Pharmaceutical products" />
+                    </figure>
+
+                    <div class="product-text">
+                        <h2>Medical Sundries & Consumables</h2>
+                        <p>
+                            Ensure your facility is well-stocked with our reliable medical sundries and consumables. Discover our full product list.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+                <div class="container">
+                    <div class="contact-form-container">
+                        <div class="form-column">
+                            <h2>Send Us a Message</h2>
+                            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                                <input type="hidden" name="access_key" value="df62c8d0-dbed-407c-a32e-79866420fcd4">
+                                <div class="form-group">
+                                    <label for="name">Your Name*</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email*</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Your Phone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message*</label>
+                                    <textarea id="message" name="message" rows="6" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Submit Now</button>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-details-column">
+                            <div class="contact-info-item">
+                                <h3>Business Hours</h3>
+                                <p>
+                                    We are open and ready to assist you with all your equipment and service needs during our standard business hours. For after-hours emergencies, please use our contact form or emergency number.
+                                </p>
+                                <br>
+                                <div class="business-hours">
+                                    <h4><strong>Monday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
+                                    <h4><strong>Tuesday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
+                                    <h4><strong>Wednesday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
+                                    <h4><strong>Thursday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
+                                    <h4><strong>Friday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
+                                    <h4><strong>Friday:</strong></h4> <p>Closed</p>
+                                    <h4><strong>Friday:</strong></h4> <p>Closed</p>
+                                </div>
+                                <br>
+                                <p>For urgent inquiries outside of business hours, please contact us via our WhatsApp number or use the contact form.</p>
+                                <a href="contact.html" class="button-link">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
     
         <section id="Brands">
             <h2>Trusted Brand Partners</h2>
