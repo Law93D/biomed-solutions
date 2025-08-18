@@ -251,6 +251,48 @@
                 color: var(--gray);
                 font-size: 0.95rem;
             }
+
+            /* Enlarged Support Section */
+            #support-services-large {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                padding: 6rem 8%; 
+                background-color: #fff; 
+            }
+
+            #support-services-large .service-item {
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+                text-align: center; 
+                overflow: hidden; 
+            }
+
+            #support-services-large .service-item img {
+                width: 100%;
+                height: 250px; 
+                object-fit: cover; 
+            }
+
+            #support-services-large .service-item h2 {
+                font-size: 1.4rem;
+                padding: 1.5rem 0; 
+                color: #005f8c; 
+            }
+
+            /* --- Mobile Responsiveness --- */
+            @media (max-width: 768px) {
+                #support-services-large {
+                    grid-template-columns: 1fr; /* On smaller screens, stack items in a single column */
+                    gap: 1.5rem; /* Reduce the gap between items */
+                    padding: 4rem 5%; /* Adjust padding for mobile */
+                }
+
+                #support-services-large .service-item img {
+                    height: 200px; /* Slightly reduce the image height for mobile screens */
+                }
+            }
             
             /* Why Choose Us Section */
             .why-choose-us {
@@ -571,6 +613,40 @@
                 <img src="images/book.jpeg" alt="Training" />
                 <h2>Training<br>Services</h2>
                 <p>Build your dedicated, onsite team with hands-on training for mission success</p>
+            </div>
+        </section>
+
+        <section id="support-services-large">
+            <div class="service-item">
+                <img src="images/upgrades.jpg" alt="Medical Upgrades" />
+                <h2>Medical Upgrades &<br>Installations</h2>
+                <p>Seamless medical upgrades, enhancing compliance, performance, and patient safety.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="images/sales_support.jpg" alt="Sales Support" />
+                <h2>After-Sales<br>Support</h2>
+                <p>Continuous after-sales support to ensure your medical equipment remains reliable, compliant, and fully functional.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="images/procurement.jpg" alt="Procurement" />
+                <h2>Consultancy &<br>Procurement Support</h2>
+                <p>We guide healthcare facilities in making cost-effective and informed procurement decisions.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/mgps_installation.jpg" alt="MGPS Installations" />
+                <h2>MGPS<br>Installations</h2>
+            </div>
+
+            <div class="service-item">
+                <img src="images/psa_installations.webp" alt="PSA" />
+                <h2>PSA<br>Installations</h2>
+            </div>
+
+            <div class="service-item">
+                <img src="images/oxygen-manifold-500x500.webp" alt="Oxygen Manifold" />
+                <h2>Oxygen<br>Manifolds</h2>
             </div>
         </section>
         
