@@ -308,13 +308,12 @@
             .contact-form {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
             }
             
             .form-group {
                 display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.1rem;
             }
             
             .form-group label {
@@ -343,6 +342,28 @@
                 resize: vertical;
                 min-height: 150px;
             }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 15px;
+                border: 2px solid #e2e8f0;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #2c5aa0;
+            }
             
             .submit-btn {
                 background-color: var(--primary);
@@ -361,6 +382,28 @@
                 background-color: var(--secondary);
                 transform: translateY(-2px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 15px;
+                border: 2px solid #e2e8f0;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #2c5aa0;
             }
             
             /* Contact Details Column */
@@ -431,12 +474,88 @@
                 transform: scale(1.1);
             }
             
-            footer {
-                background-color: var(--primary);
-                color: var(--white);
+            /* Footer Section */
+            .footer {
+                background: #1a202c;
+                color: white;
+                padding: 50px 0 20px;
+            }
+
+            /* Container for max-width and centering */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+
+            .footer-content {
+                display: grid;
+                /* This rule creates a responsive grid. It will fit as many 250px columns as possible.
+                When there isn't enough space, the columns will wrap and stack. */
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .footer-logo {
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .footer-logo i {
+                margin-right: 10px;
+                color: #ff6b35;
+            }
+
+            .footer-section h4 {
+                margin-bottom: 1rem;
+                color: #ff6b35;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section li {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-section a {
+                color: #cbd5e0;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section a:hover {
+                color: white;
+            }
+
+            .footer-bottom {
                 text-align: center;
-                padding: 2rem;
-                font-size: 0.9rem;
+                padding-top: 2rem;
+                border-top: 1px solid #2d3748;
+               color: #cbd5e0;
+            }
+
+            /* Media Query for smaller screens (e.g., mobile) */
+            @media (max-width: 768px) {
+                .footer-content {
+                    /* On screens smaller than 768px, we make each section a single column. */
+                    grid-template-columns: 1fr;
+                    text-align: center; /* Center the text for a cleaner mobile layout */
+                }
+    
+                .footer-section h4 {
+                    margin-top: 1.5rem; /* Adds space between sections when they stack */
+                }
+
+                .footer-logo {
+                    justify-content: center; /* Centers the logo on mobile screens */
+                }
             }
             
             @keyframes fadeInDown {
@@ -614,7 +733,7 @@
                             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                                 <input type="hidden" name="access_key" value="df62c8d0-dbed-407c-a32e-79866420fcd4">
                                 <div class="form-group">
-                                    <label for="name">Name*</label>
+                                    <label for="name">Your Name*</label>
                                     <input type="text" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
@@ -623,16 +742,29 @@
                                     name="name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email*</label>
+                                    <label for="email">Your Email*</label>
                                     <input type="email" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">Phone Number</label>
                                     <input type="tel" id="phone" name="phone">
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">Message*</label>
-                                    <textarea id="message" name="message" rows="8" required></textarea>
+                                <select name="service" required>
+                                    <option value="">Select Service</option>
+                                    <option
+                                    value="request for quotation"> Request For Quotation (RFQ)</option>
+                                    <option value="equipment-supply">Equipment Supply</option>
+                                    <option value="repair">Equipment Repair</option>
+                                    <option value="maintenance">Maintenance Service</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option
+                                    value="training">Training</option>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message*</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
                                 </div>
                                 <button type="submit" class="submit-btn">Submit Now</button>
                             </form>
@@ -690,8 +822,45 @@
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Biomed Solutions</span>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="casualty.html">Equipment Supply</a></li>
+                            <li><a href="tech.html">Technical Repairs</a></li>
+                            <li><a href="tech.html">Maintenance</a></li>
+                            <li><a href="contact.html">Emergency Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="casualty.html">Medical Equipment</a></li>
+                            <li><a href="lab.html">Laboratory Equipment</a></li>
+                            <li><a href="critical.html">Diagnostic Tools</a></li>
+                            <li><a href="tech.html">Custom Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>+266 6326 8485</p>
+                        <p>biomedholdings@gmail.com</p>
+                        <p>24/7 Emergency Support</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Biomed Solutions. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
 
         <!-- START: WhatsApp Floating Button -->

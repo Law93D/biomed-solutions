@@ -440,12 +440,88 @@ button:hover {
     transform: scale(1.1);
 }
             
-footer {
-    background-color: var(--primary);
-    color: var(--white);
+/* Footer Section */
+.footer {
+    background: #1a202c;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+/* Container for max-width and centering */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    /* This rule creates a responsive grid. It will fit as many 250px columns as possible.
+    When there isn't enough space, the columns will wrap and stack. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-logo i {
+    margin-right: 10px;
+    color: #ff6b35;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #ff6b35;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
     text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid #2d3748;
+    color: #cbd5e0;
+}
+
+/* Media Query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .footer-content {
+        /* On screens smaller than 768px, we make each section a single column. */
+        grid-template-columns: 1fr;
+        text-align: center; /* Center the text for a cleaner mobile layout */
+    }
+    
+    .footer-section h4 {
+        margin-top: 1.5rem; /* Adds space between sections when they stack */
+    }
+
+    .footer-logo {
+        justify-content: center; /* Centers the logo on mobile screens */
+    }
 }
             
 @keyframes fadeInDown {

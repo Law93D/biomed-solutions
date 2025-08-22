@@ -121,13 +121,12 @@
             .contact-form {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
             }
             
             .form-group {
                 display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.1rem;
             }
             
             .form-group label {
@@ -155,6 +154,28 @@
             .form-group textarea {
                 resize: vertical;
                 min-height: 150px;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 15px;
+                border: 2px solid #e2e8f0;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #2c5aa0;
             }
             
             .submit-btn {
@@ -382,7 +403,7 @@
                             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                                 <input type="hidden" name="access_key" value="df62c8d0-dbed-407c-a32e-79866420fcd4">
                                 <div class="form-group">
-                                    <label for="name">Name*</label>
+                                    <label for="name">Your Name*</label>
                                     <input type="text" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
@@ -391,15 +412,28 @@
                                     name="name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email*</label>
+                                    <label for="email">Your Email*</label>
                                     <input type="email" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">Phone Number</label>
                                     <input type="tel" id="phone" name="phone">
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">Message*</label>
+                                <select name="service" required>
+                                    <option value="">Select Service</option>
+                                    <option
+                                    value="request for quotation">Request For Quotation (RFQ)</option>
+                                    <option value="equipment-supply">Equipment Supply</option>
+                                    <option value="repair">Equipment Repair</option>
+                                    <option value="maintenance">Maintenance Service</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option
+                                    value="training">Training</option>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message*</label>
                                     <textarea id="message" name="message" rows="7" required></textarea>
                                 </div>
                                 <button type="submit" class="submit-btn">Submit Now</button>
@@ -448,8 +482,45 @@
             </div>
         </section>
     
-        <footer>
-            <p>&copy; 2025 BIOMED SOLUTIONS. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Biomed Solutions</span>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="casualty.html">Equipment Supply</a></li>
+                            <li><a href="tech.html">Technical Repairs</a></li>
+                            <li><a href="tech.html">Maintenance</a></li>
+                            <li><a href="contact.html">Emergency Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="casualty.html">Medical Equipment</a></li>
+                            <li><a href="lab.html">Laboratory Equipment</a></li>
+                            <li><a href="critical.html">Diagnostic Tools</a></li>
+                            <li><a href="tech.html">Custom Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>+266 6326 8485</p>
+                        <p>biomedholdings@gmail.com</p>
+                        <p>24/7 Emergency Support</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Biomed Solutions. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
 
         <a href="https://wa.me/26663268485" class="whatsapp-float" target="_blank">
