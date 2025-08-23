@@ -62,7 +62,7 @@ html, body {
 #tabs-top a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     transition: color 0.3s ease;
     position: relative;
@@ -752,4 +752,253 @@ button:hover {
 }
 .whatsapp-float:hover {
     background-color: #1ebe5d;
+}
+
+/* --- Solutions container styling --- */
+.solutions-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #005f8c;
+    color: #fff;
+    padding: 20px;
+}
+
+.solutions-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+.solutions-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solutions-nav li {
+    margin-bottom: 10px;
+}
+
+.solutions-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.solutions-nav a:hover {
+    background-color: rgb(159, 162, 184);
+}
+
+/* Dropdown menu styling */
+.solutions-dropdown-menu .dropbtn {
+    padding: 0 10px;
+}
+
+.solutions-dropdown-menu .dropdown-content {
+    right: auto;
+    left: 0;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 20px;
+    display: none; /* hidden by default */
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: #333;
+    background-color: #f0f2f5;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Main content styling --- */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: #005f8c;
+    margin: 0 0 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Center image + equipment list */
+.content-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    text-align: center;     
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 20px auto; 
+}
+
+/* Equipment list */
+.equipment-list-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.equipment-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.equipment-column p {
+    margin: 6px 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .solutions-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .solutions-heading {
+        text-align: center;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .solutions-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .solutions-nav li {
+        margin: 5px;
+    }
+
+    .equipment-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* --- Hamburger menu --- */
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    justify-content: space-between;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile nav */
+#tabs-top {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style for the active/current page link */
+.tabs-top .active-link {
+    color: #3f6089; /* A deep blue color for the text */
+    text-decoration: underline;
+    text-decoration-color: #3f6089; /* The same deep blue color for the underline */
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    #tabs-top {
+        position: absolute;
+        top: 70px;
+        left: -100%; 
+        width: 100%;
+        background: #0d47a1;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+    }
+
+    #tabs-top a, 
+    #tabs-top .dropbtn {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    #tabs-top.active {
+        left: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }

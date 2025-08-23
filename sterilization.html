@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>STERILIZATION ROOM | BIOMED SOLUTIONS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Navigation - Desktop */
+        #tabs-top {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        #tabs-top a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        #tabs-top a.active {
+            color: var(--primary);
+        }
+        #tabs-top a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        #tabs-top a:hover {
+            color: var(--primary);
+        }
+        #tabs-top a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        #tabs-top a:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            
+            <!-- Logo -->
+            <div id="logo">
+                <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" aria-label="Menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="tabs-top">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+
+                <!-- Products Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Products ▾</a>
+                    <div class="dropdown-content">
+                        <a href="casualty.html">Casualty</a>
+                        <a href="critical.html">Critical Care</a>
+                        <a href="cssd.html">CSSD</a>
+                        <a href="lab.html">Laboratory</a>
+                        <a href="opt.html">Operating Theatre</a>
+                        <a href="paeds.html">Paeds & Maternity</a>
+                        <a href="radiology.html">Radiology</a>
+                        <a href="dental.html">Dental</a>
+                        <a href="oxygen.html">PSA & MGPS</a>
+                        <a href="furniture.html">Medical Furniture</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Dropdown -->
+                <div class="dropdown solutions-dropdown-menu">
+                    <a href="#" class="dropbtn active">Solutions ▾</a>
+                    <div class="dropdown-content">
+                        <a href="solutions.html">Operating Theatre</a>
+                        <a href="delivery.html">Delivery Room</a>
+                        <a href="sterilization.html">Sterilization Room</a>
+                        <a href="laboratory.html">Laboratory</a>
+                        <a href="wards.html">Ward</a>
+                        <a href="dental_clinic.html">Dental Clinic</a>
+                        <a href="mgps.html">Medical Gas Pipeline Systems</a>
+                        <a href="psa.html">Pressure Swing Adsorption</a>
+                    </div>
+                </div>
+
+                <a href="tech.html">Support & Services</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="solutions-container">
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h2 class="solutions-heading">Solutions</h2>
+                <nav class="solutions-nav">
+                    <ul>
+                        <li><a href="solutions.html">Operating Theatre</a></li>
+                        <li><a href="delivery.html">Delivery Room</a></li>
+                        <li><a href="sterilization.html">Sterilization Room</a></li>
+                        <li><a href="laboratory.html">Laboratory</a></li>
+                        <li><a href="wards.html">Ward</a></li>
+                        <li><a href="dental_clinic.html">Dental Clinic</a></li>
+                        <li><a href="mgps.html">Medical Gas Pipeline Systems</a></li>
+                        <li><a href="psa.html">Pressure Swing Adsorption</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Solutions Section -->
+            <div class="main-content">
+                <h1 class="page-title">Sterilization Room Solutions</h1>
+                <div class="content-wrapper">
+                    <div class="image-section">
+                        <img src="images/solution3-1.jpg" alt="Sterilization Room" />
+                    </div>
+                    <div class="equipment-list-section">
+                        <div class="equipment-list">
+                            <div class="equipment-column">
+                                <p>Horizontal Cylindrical Sterilizer</p>
+                                <p>Pulse Vacuum Horizontal Sterilizer</p>
+                                <p>Medical Hand Sink</p>
+                                <p>Industrial Washing Machine</p>
+                            </div>
+                            <div class="equipment-column">
+                                <p>Thermostatic Bath</p>
+                                <p>Water Purifier</p>
+                                <p>Storage Rack</p>
+                                <p>Medical Trolley</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- BRANDS -->
+    <section id="Brands">
+        <h2>Trusted Brand Partners</h2>
+        <p>Biomed Solutions offers a wide range of products from leading global manufacturers, ensuring quality and reliability.</p>
+        <div class="brand-logos">
+            <img src="images/brand-amcaremed.png" alt="Amcaremed" />
+            <img src="images/brand-bailian.jpeg" alt="Bailian" />
+            <img src="images/brand-comen.jpeg" alt="Comen" />
+            <img src="images/brand-novos.png" alt="Novos" />
+            <img src="images/brand-sada.jpeg" alt="Sada" />
+            <img src="images/seca-brand.png" alt="Seca" />
+            <img src="images/b-braun-brand.png" alt="B Braun" />
+            <img src="images/rix-brand.png" alt="Rix" />
+            <img src="images/enmind-brand.png" alt="Enmind" />
+            <img src="images/vayu-brand.png" alt="Vayu" />
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Biomed Solutions</span>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="casualty.html">Equipment Supply</a></li>
+                        <li><a href="tech.html">Technical Repairs</a></li>
+                        <li><a href="tech.html">Maintenance</a></li>
+                        <li><a href="contact.html">Emergency Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="casualty.html">Medical Equipment</a></li>
+                        <li><a href="lab.html">Laboratory Equipment</a></li>
+                        <li><a href="critical.html">Diagnostic Tools</a></li>
+                        <li><a href="tech.html">Custom Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>+266 6326 8485</p>
+                    <p>biomedholdings@gmail.com</p>
+                    <p>24/7 Emergency Support</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Biomed Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/26663268485" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Dropdown toggles inside sidebar
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (event) => {
+                event.preventDefault();
+                const menu = toggle.nextElementSibling;
+                if (menu) {
+                    menu.classList.toggle('active');
+                }
+            });
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('#tabs-top');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+</script>
+</body>
+</html>
