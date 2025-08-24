@@ -436,7 +436,7 @@
                     </div>
                 </div>
 
-                <div class="info-box-2"">
+                <div class="info-box-2">
                     <figure class="product-image-container">
                         <img src="images/bottom-image.jpg" alt="Pharmaceutical products" />
                     </figure>
@@ -464,8 +464,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Company Name*</label>
-                                    <input type="text" id="name"
-                                    name="name" required>
+                                    <input type="text" id="company"
+                                    name="company" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Your Email*</label>
@@ -509,8 +509,8 @@
                                     <h4><strong>Wednesday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
                                     <h4><strong>Thursday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
                                     <h4><strong>Friday:</strong></h4> <p>8:00 AM - 5:00 PM</p>
-                                    <h4><strong>Friday:</strong></h4> <p>Closed</p>
-                                    <h4><strong>Friday:</strong></h4> <p>Closed</p>
+                                    <h4><strong>Saturday:</strong></h4> <p>Closed</p>
+                                    <h4><strong>Sunday:</strong></h4> <p>Closed</p>
                                 </div>
                                 <br>
                                 <p>For urgent inquiries outside of business hours, please contact us via our WhatsApp number or use the contact form.</p>
@@ -582,36 +582,45 @@
         <a href="https://wa.me/26663268485" class="whatsapp-float" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         </a>
+
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
                 const tabsTop = document.getElementById('tabs-top');
                 const hamburgerMenu = document.querySelector('.hamburger-menu');
-                const dropBtn = document.querySelector('.dropbtn');
-                const dropdownContent = document.querySelector('.dropdown-content');
-        
-                // Highlight current page
+                const dropBtns = document.querySelectorAll('.dropbtn');
+
+                // ✅ Highlight current page in navbar
                 document.querySelectorAll('#tabs-top a').forEach(link => {
-                    if (link.getAttribute('href') === currentPage) {
+                    const href = link.getAttribute('href')
+                        .replace('./', '') // remove leading "./"
+                        .replace('/', '')  // remove leading "/"
+                        || 'index.html';
+                    if (href === currentPage) {
                         link.classList.add('active');
                     }
                 });
-        
-                // Handle dropdown links separately
-                const dropdownPages = [
+
+                // ✅ Handle product dropdown highlighting
+                const productPages = [
                     'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
                     'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
                 ];
-        
-                // Check if the current page is one of the dropdown pages
-                if (dropdownPages.includes(currentPage)) {
-                    // Add the 'active' class to the dropdown button
-                    if (dropBtn) {
-                        dropBtn.classList.add('active');
-                    }
+                if (productPages.includes(currentPage) && dropBtns[0]) {
+                    dropBtns[0].classList.add('active');
                 }
-        
-                // This is the new, corrected logic for the mobile menu
+
+                // ✅ Handle solutions dropdown highlighting
+                const solutionsPages = [
+                    'solutions.html', 'delivery.html', 'sterilization.html',
+                    'laboratory.html', 'wards.html', 'dental_clinic.html',
+                    'mgps.html', 'psa.html'
+                ];
+                if (solutionsPages.includes(currentPage) && dropBtns[1]) {
+                    dropBtns[1].classList.add('active');
+                }
+
+                // ✅ Mobile menu toggle (hamburger)
                 if (hamburgerMenu && tabsTop) {
                     hamburgerMenu.addEventListener('click', () => {
                         hamburgerMenu.classList.toggle('active');
