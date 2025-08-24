@@ -1,45 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/about</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/contact</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/services</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/products</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/solutions</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.biomedsolutionslesotho.com/temp-fix</loc>
-        <lastmod>2025-08-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.1</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://biomedsolutionslesotho.com/</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/index.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/about.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/casualty.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/critical.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/cssd.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/lab.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/opt.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/paeds.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/radiology.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/dental.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/oxygen.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/furniture.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/solutions.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/delivery.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/sterilization.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/laboratory.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/wards.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/dental_clinic.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/mgps.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/psa.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/tech.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://biomedsolutionslesotho.com/contact.html</loc>
+<lastmod>2025-08-24T13:20:17+00:00</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
