@@ -130,7 +130,6 @@ html, body {
     transition: background-color 0.3s ease;
 }
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
     color: var(--primary);
 }
 .dropdown:hover .dropdown-content {
@@ -159,6 +158,10 @@ html, body {
     .dropdown:hover .dropdown-content {
         position: static;
         box-shadow: none;
+    }
+
+    .dropdown-content a {
+        color: #000000; /* This changes the text color to black */
     }
 }
             
@@ -969,7 +972,7 @@ button:hover {
         top: 70px;
         left: -100%; 
         width: 100%;
-        background: #0d47a1;
+        background: rgb(69, 173, 88);
         flex-direction: column;
         align-items: center;
         gap: 20px;
@@ -992,13 +995,14 @@ button:hover {
         left: 0;
     }
 
-    .hamburger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
+    /* Animate the hamburger menu to an "X" when active */
+            .hamburger-menu.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
