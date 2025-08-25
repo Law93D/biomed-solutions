@@ -36,7 +36,7 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 120px;
+                min-height: 120px;
                 z-index: 1000;
                 padding: 0.5rem 8%;
             }
@@ -109,8 +109,8 @@
                 border: none;
                 cursor: pointer;
                 font-family: inherit;
-                font-size: 0.5rem;
-                font-weight: 50;
+                font-size: 1rem;
+                font-weight: 500;
                 color: var(--dark);
                 padding: 0.5rem 0;
             }
@@ -406,31 +406,59 @@
             }
             
             /* Contact Details Column */
-            .contact-details-column h3 {
-                font-size: 1.5rem;
-                color: var(--primary);
-                margin-bottom: 1.5rem;
-            }
-            
-            .contact-info-item {
-                background-color: var(--white);
-                padding: 2rem;
-                border-radius: 8px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                height: 100%;
-            }
-            
-            .contact-info-item h4, h2 {
-                color: var(--primary);
-            }
-            .contact-info-item p {
-                color: var(--primary);
-                line-height: 1.8;
-            }
+.contact-details-column {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
 
-            ul {
-                color: var(--primary);
-            }
+.contact-details-column h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Info Card */
+.contact-info-item {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: auto; /* prevent forced stretching */
+}
+
+/* Correct scoping: only target h4 & h2 inside */
+.contact-info-item h4,
+.contact-info-item h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.contact-info-item p {
+    color: var(--primary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.contact-info-item ul {
+    color: var(--primary);
+    padding-left: 1.2rem;
+}
+
+.contact-info-item ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile fix: stack full width */
+@media (max-width: 768px) {
+    .contact-details-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
             
             /* Brands Section */
             #Brands {

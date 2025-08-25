@@ -393,10 +393,15 @@ button:hover {
     line-height: 1.6;
 }
 
-/* Add media query for responsiveness on smaller screens */
+/* Mobile fix */
 @media (max-width: 768px) {
-    .product-info-grid {
-        flex-direction: column;
+    .product-image-container {
+        height: auto; /* remove fixed height on mobile */
+    }
+
+    .product-image-container img {
+        height: auto;        /* keep aspect ratio */
+        object-fit: contain; /* show full image without cropping */
     }
 }
 
