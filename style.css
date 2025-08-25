@@ -453,6 +453,7 @@ button:hover {
     background: #1a202c;
     color: white;
     padding: 50px 0 20px;
+    font-size: 0.9rem; /* Slightly smaller font size */
 }
 
 /* Container for max-width and centering */
@@ -487,6 +488,7 @@ button:hover {
 .footer-section h4 {
     margin-bottom: 1rem;
     color: #ff6b35;
+    font-size: 1.5rem;
 }
 
 .footer-section ul {
@@ -505,7 +507,7 @@ button:hover {
 }
 
 .footer-section a:hover {
-    color: white;
+    color: #ff6b35;
 }
 
 .footer-bottom {
