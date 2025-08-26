@@ -781,6 +781,7 @@ button:hover {
     padding: 20px;
 }
 
+/* Sidebar Heading */
 .solutions-heading {
     font-size: 1.5rem;
     font-weight: bold;
@@ -789,6 +790,7 @@ button:hover {
     border-bottom: 2px solid #fff;
 }
 
+/* Remove list bullets & spacing */
 .solutions-nav ul {
     list-style: none;
     padding: 0;
@@ -796,20 +798,42 @@ button:hover {
 }
 
 .solutions-nav li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
+/* Links styled like buttons */
 .solutions-nav a {
     display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 0;
+    padding: 10px 15px;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .solutions-nav a:hover {
-    background-color: rgb(159, 162, 184);
+    background-color: #f5f5f5;
+    border-color: #999;
+    color: #000;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;          /* sidebar spans full width */
+        padding: 15px;
+    }
+
+    .solutions-nav a {
+        width: 100%;          /* buttons full width */
+        font-size: 1rem;      /* larger for touch */
+    }
 }
 
 /* Dropdown menu styling */
