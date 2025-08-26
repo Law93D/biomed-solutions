@@ -106,8 +106,8 @@ html, body {
     border: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 0.5rem;
-    font-weight: 50;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--dark);
     padding: 0.5rem 0;
 }
