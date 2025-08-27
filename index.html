@@ -46,67 +46,44 @@
 
         <link rel="stylesheet" href="style.css" />
         <style>
-            /* Hamburger Menu - hidden on desktop */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    width: 30px;
-    height: 25px;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1001;
-}
+            /* Hide the hamburger menu on desktop */
+            .hamburger-menu {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
 
-.hamburger-menu .bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--dark);
-    border-radius: 25px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
+            .hamburger-menu .bar {
+                height: 3px;
+                width: 25px;
+                background-color: var(--dark);
+                margin: 4px 0;
+                transition: 0.3s;
+            }
 
-.hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-        
-            /* On larger screens, the main nav is visible and the hamburger menu is hidden */
-            @media (min-width: 993px) {
-                #tabs-top {
-                    display: flex;
-                    align-items: center;
-                    gap: 1.5rem;
-                }
+            /* Animate the hamburger menu to an "X" when active */
+            .hamburger-menu.active span:nth-child(1) {
+                transform: translateY(11px) rotate(45deg);
+            }
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active span:nth-child(3) {
+                transform: translateY(-11px) rotate(-45deg);
             }
 
             /* Mobile styles */
-            @media (max-width: 992px) {
-                .main-header .header-container {
-                    justify-content: space-between;
-                }
-                
+            @media (max-width: 768px) {
                 #tabs-top {
-                    display: none; /* Hide the menu by default on mobile */
+                    display: none;
+                    flex-direction: column;
+                    background-color: rgb(69, 173, 88);
                     position: absolute;
                     top: 100%;
                     left: 0;
                     width: 100%;
-                    flex-direction: column;
-                    background-color: rgb(69, 173, 88);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                     padding: 1rem 0;
-                    text-align: center;
                 }
 
                 /* Show the mobile menu when the 'active' class is present */
@@ -118,28 +95,30 @@
                 .dropdown .dropbtn {
                     padding: 0;
                     width: 100%;
-                    color: black; /* 🔥 Force links & buttons to be black */
-                    text-decoration: none;
-                    border-bottom: 2px solid transparent; 
+                    color: black;
+                    font-size: 1rem;
                 }
 
                 .dropdown-content {
                     position: static;
-                    width: 100%;
                     box-shadow: none;
-                    background-color: #f8f9fa; /* A slightly different color for the dropdown */
+                    z-index: 1000;
+                }
+
+                .dropdown-content a {
+                    margin-bottom: 15px;
                 }
 
                 /* Show the hamburger menu icon on mobile */
                 .hamburger-menu {
                     display: flex;
-                    flex-direction: column;
                     cursor: pointer;
-                    width: px;
+                    width: 25px;
                     height: 25px;
-                    justify-content: space-between;
-                    position: relative;
-                    z-index: 1001;
+                }
+
+                .hamburger-menu span {
+                    background-color: black;
                 }
             }
 
@@ -306,11 +285,10 @@
                     <img src="images/BS1.jpg" alt="BIOMED SOLUTIONS Logo" />
                 </div>
                 
-                <!-- Hamburger Icon -->
-                <div class="hamburger-menu" onclick="toggleMenu()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 <nav id="tabs-top">
@@ -368,7 +346,7 @@
             <div id="about-text">
                 <h2>Welcome to Biomed Solutions</h2>
                 <p>
-                    We specialize in supply of medical equipment and consumables. As well as expert installation, maintenance, and user training to healthcare professionals. We exist to ensure that healthcare facilities in Lesotho have access to reliable medical equipment, timely repairs, essential consumables, and comprehensive training. Our purpose is to improve patient care by keeping medical equipment functional and accessible, while empowering healthcare professionals with the knowledge and skills they need to use this equipment effectively.
+                    We specialize in supply of medical equipment and consumables. As well as expert installation, maintenance, and user training to healthcare professionals. We exist to ensure that healthcare facilities in Lesotho have access to reliable medical equipment, timely repairs, essential consumables, and comprehensive training. Our purpose is to improve patient care by keeping medical euipment functional and accessible, while empowering healthcare professionals with the knowledge and skills they need to use this equipment effectively.
                 </p>
                 <button onclick="window.location.href='about.html'">More About Us</button>
             </div>
@@ -606,52 +584,49 @@
         </a>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('DOMContentLoaded', function () {
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
                 const tabsTop = document.getElementById('tabs-top');
                 const hamburgerMenu = document.querySelector('.hamburger-menu');
                 const dropBtns = document.querySelectorAll('.dropbtn');
 
-                // Function to highlight the active page in the navigation
-                const highlightActivePage = () => {
-                    document.querySelectorAll('#tabs-top a').forEach(link => {
-                        const href = link.getAttribute('href').replace('./', '').replace('/', '') || 'index.html';
-                        if (href === currentPage) {
-                            link.classList.add('active');
-                        }
-                    });
-
-                    const productPages = [
-                        'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
-                        'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html', 'furniture.html'
-                    ];
-                    if (productPages.includes(currentPage) && dropBtns[0]) {
-                        dropBtns[0].classList.add('active');
+                // ✅ Highlight current page in navbar
+                document.querySelectorAll('#tabs-top a').forEach(link => {
+                    const href = link.getAttribute('href')
+                        .replace('./', '') // remove leading "./"
+                        .replace('/', '')  // remove leading "/"
+                        || 'index.html';
+                    if (href === currentPage) {
+                        link.classList.add('active');
                     }
-                    
-                    const solutionsPages = [
-                        'solutions.html', 'delivery.html', 'sterilization.html',
-                        'laboratory.html', 'wards.html', 'dental_clinic.html',
-                        'mgps.html', 'psa.html'
-                    ];
-                    if (solutionsPages.includes(currentPage) && dropBtns[1]) {
-                        dropBtns[1].classList.add('active');
-                    }
-                };
-                
-                // Function to toggle the mobile menu
-                const toggleMenu = () => {
-                    hamburgerMenu.classList.toggle('active');
-                    tabsTop.classList.toggle('active');
-                };
+                });
 
-                // Add event listener to the hamburger menu button
-                if (hamburgerMenu && tabsTop) {
-                    hamburgerMenu.addEventListener('click', toggleMenu);
+                // ✅ Handle product dropdown highlighting
+                const productPages = [
+                    'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
+                    'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+                ];
+                if (productPages.includes(currentPage) && dropBtns[0]) {
+                    dropBtns[0].classList.add('active');
                 }
 
-                // Initial highlighting on page load
-                highlightActivePage();
+                // ✅ Handle solutions dropdown highlighting
+                const solutionsPages = [
+                    'solutions.html', 'delivery.html', 'sterilization.html',
+                    'laboratory.html', 'wards.html', 'dental_clinic.html',
+                    'mgps.html', 'psa.html'
+                ];
+                if (solutionsPages.includes(currentPage) && dropBtns[1]) {
+                    dropBtns[1].classList.add('active');
+                }
+
+                // ✅ Mobile menu toggle (hamburger)
+                if (hamburgerMenu && tabsTop) {
+                    hamburgerMenu.addEventListener('click', () => {
+                        hamburgerMenu.classList.toggle('active');
+                        tabsTop.classList.toggle('active');
+                    });
+                }
             });
         </script>
     </body>

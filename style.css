@@ -823,6 +823,13 @@ button:hover {
     color: #000;
 }
 
+/* ✅ Active link */
+.solutions-nav a.active {
+    background-color: #519d4f; /* Blue background */
+    color: #fff; /* White text */
+    border-color: #007bff;
+}
+
 /* ✅ Mobile responsiveness */
 @media (max-width: 768px) {
     .sidebar {

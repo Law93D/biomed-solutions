@@ -153,7 +153,7 @@
                             <div class="equipment-column">
                                 <p>Area Alarm System</p>
                                 <p>Ward Terminal Points</p>
-                                <p>line 2nd Stage Reducers</p>
+                                <p>Line 2nd Stage Reducers</p>
                                 <p>Bed Head Units</p>
                                 <p>Area Valves</p>
                             </div>
@@ -260,6 +260,18 @@
                 navMenu.classList.toggle('active');
             });
         }
+    });
+
+    // Highlight current page link in sidebar
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop(); 
+        const links = document.querySelectorAll(".solutions-nav a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
     });
 </script>
 </body>

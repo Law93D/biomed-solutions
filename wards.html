@@ -143,13 +143,13 @@
                     <div class="equipment-list-section">
                         <div class="equipment-list">
                             <div class="equipment-column">
-                                <p>Hospital Bedr</p>
+                                <p>Hospital Bed</p>
                                 <p>Bedside Cabinet</p>
                                 <p>Overbed Table</p>
                                 <p>Visitor Chair</p>
                             </div>
                             <div class="equipment-column">
-                                <p>Dustin Bin</p>
+                                <p>Dust Bin</p>
                                 <p>Suction unit</p>
                                 <p>Examination Lamp</p>
                             </div>
@@ -256,6 +256,18 @@
                 navMenu.classList.toggle('active');
             });
         }
+    });
+
+    // Highlight current page link in sidebar
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop(); 
+        const links = document.querySelectorAll(".solutions-nav a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
     });
 </script>
 </body>

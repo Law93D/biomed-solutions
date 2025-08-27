@@ -258,6 +258,18 @@
             });
         }
     });
+
+    // Highlight current page link in sidebar
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop(); 
+        const links = document.querySelectorAll(".solutions-nav a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    });
 </script>
 </body>
 </html>
