@@ -422,9 +422,24 @@ button:hover {
 .button-link:hover {
     background-color: rgb(38, 180, 38);
 }
-            
+
+/* Brands Section */
 #Brands {
+    padding: 5rem 5%;
     background-color: var(--white);
+    text-align: center;
+}
+
+#Brands h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+#Brands p {
+    color: var(--gray);
+    max-width: 800px;
+    margin: 0 auto 3rem;
 }
             
 .brand-logos {
