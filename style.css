@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background-color: var(--light);
-    padding-top: 120px; /* Space for fixed header */
+    padding-top: 120px;
 }
 
 html, body {
@@ -27,50 +27,53 @@ html, body {
 }
             
 .main-header {
-    background-color: var(--white);
+    width: 100%;
+    background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed; /* fixed for always visible */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
-    height: 120px;
-    padding: 0.5rem 8%;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Logo */
 #logo img {
-    max-height: 102px;
+    max-height: 100px;
     transition: transform 0.3s ease;
 }
+
 #logo img:hover {
     transform: scale(1.05);
 }
 
-/* Navigation - Desktop */
 #tabs-top {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
+
 #tabs-top a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 700;
+    font-weight: 750;
     font-size: 1rem;
     transition: color 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
 }
+
 #tabs-top a.active {
     color: var(--primary);
 }
+
 #tabs-top a.active:after {
     content: '';
     position: absolute;
@@ -80,9 +83,11 @@ html, body {
     height: 2px;
     background-color: var(--primary);
 }
+
 #tabs-top a:hover {
     color: var(--primary);
 }
+
 #tabs-top a:after {
     content: '';
     position: absolute;
@@ -93,14 +98,15 @@ html, body {
     background-color: var(--primary);
     transition: width 0.3s ease;
 }
+
 #tabs-top a:hover:after {
     width: 100%;
 }
 
-/* Dropdown Menu */
 .dropdown {
     position: relative;
 }
+
 .dropbtn {
     background-color: transparent;
     border: none;
@@ -111,6 +117,7 @@ html, body {
     color: var(--dark);
     padding: 0.5rem 0;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -122,6 +129,7 @@ html, body {
     overflow: hidden;
     padding-left: 30px;
 }
+
 .dropdown-content a {
     color: var(--dark);
     padding: 12px 16px;
@@ -129,42 +137,15 @@ html, body {
     display: block;
     transition: background-color 0.3s ease;
 }
+
 .dropdown-content a:hover {
     color: var(--primary);
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: flex;
-    }
-    #tabs-top {
-        display:none;
-        flex-direction: column;
-        background-color: var(--white);
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 1rem 0;
-    }
-    #tabs-top.show {
-        display: flex;
-    }
-    .dropdown:hover .dropdown-content {
-        position: static;
-        box-shadow: none;
-    }
-
-    .dropdown-content a {
-        color: #000000; /* This changes the text color to black */
-    }
-}
-            
 .hero {
     position: relative;
     width: 100vw;
@@ -259,7 +240,7 @@ button {
 }
             
 button:hover {
-    background-color: rgb(38, 180, 38);
+    background-color: #346d41;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -339,7 +320,7 @@ button:hover {
 }
 
 #products-info {
-    background-color: var(--primary); /* Use your primary blue color */
+    background-color: var(--primary);
     color: var(--white);
     padding: 0;
     padding-top: 5rem;
@@ -358,16 +339,15 @@ button:hover {
     flex: 1;
     background-color: var(--white);
     color: var(--dark);
-    /* border-radius: 10px; */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures the image corners match the container */
+    overflow: hidden;
     text-align: center;
     margin-left: 0%;
     margin-right: 0%;
 }
 
 .product-image-container {
-    height: 500px; /* Adjust this height as needed */
+    height: 500px;
     overflow: hidden;
 }
 
@@ -393,18 +373,6 @@ button:hover {
     line-height: 1.6;
 }
 
-/* Mobile fix */
-@media (max-width: 768px) {
-    .product-image-container {
-        height: auto; /* remove fixed height on mobile */
-    }
-
-    .product-image-container img {
-        height: auto;        /* keep aspect ratio */
-        object-fit: contain; /* show full image without cropping */
-    }
-}
-
 .button-link {
     display: inline-block;
     background-color: lightblue;
@@ -423,25 +391,12 @@ button:hover {
     background-color: rgb(38, 180, 38);
 }
 
-/* Brands Section */
 #Brands {
     padding: 5rem 5%;
     background-color: var(--white);
     text-align: center;
 }
 
-#Brands h2 {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-#Brands p {
-    color: var(--gray);
-    max-width: 800px;
-    margin: 0 auto 3rem;
-}
-            
 .brand-logos {
     display: flex;
     flex-wrap: wrap;
@@ -463,15 +418,13 @@ button:hover {
     transform: scale(1.1);
 }
             
-/* Footer Section */
 .footer {
     background: #1a202c;
     color: white;
     padding: 50px 0 20px;
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 0.9rem;
 }
 
-/* Container for max-width and centering */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -480,8 +433,6 @@ button:hover {
 
 .footer-content {
     display: grid;
-    /* This rule creates a responsive grid. It will fit as many 250px columns as possible.
-    When there isn't enough space, the columns will wrap and stack. */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
@@ -531,23 +482,6 @@ button:hover {
     border-top: 1px solid #2d3748;
     color: #cbd5e0;
 }
-
-/* Media Query for smaller screens (e.g., mobile) */
-@media (max-width: 768px) {
-    .footer-content {
-        /* On screens smaller than 768px, we make each section a single column. */
-        grid-template-columns: 1fr;
-        text-align: center; /* Center the text for a cleaner mobile layout */
-    }
-    
-    .footer-section h4 {
-        margin-top: 1.5rem; /* Adds space between sections when they stack */
-    }
-
-    .footer-logo {
-        justify-content: center; /* Centers the logo on mobile screens */
-    }
-}
             
 @keyframes fadeInDown {
     from {
@@ -571,50 +505,6 @@ button:hover {
     }
 }
             
-@media (max-width: 992px) {
-    #about {
-        flex-direction: column;
-    }
-                
-    #about img {
-        width: 100%;
-    }
-                
-    .main-header {
-        flex-direction: column;
-        padding: 1rem;
-    }
-                
-    #tabs-top {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-                
-    .hero-tagline h1 {
-        font-size: 2.5rem;
-    }
-                
-    .hero-tagline p {
-        font-size: 1.2rem;
-    }
-}
-            
-@media (max-width: 768px) {
-    section {
-        padding: 3rem 2rem;
-    }
-                
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-                
-    .brand-logos img {
-        height: 40px;
-    }
-}
-
-/* Casualty and Other Section Pages */
 #casualty-section {
     padding: 3rem 5% 2rem;
     background-color: var(--white);
@@ -639,7 +529,6 @@ button:hover {
     background-color: var(--accent);
 }
             
-/* Department Tabs */
 .department-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -665,10 +554,9 @@ button:hover {
     border-color: var(--primary);
 }
 
-/* Gallery Section - Original Style */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 per row, responsive */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 0 20px;
     max-width: 1200px;
@@ -710,53 +598,7 @@ button:hover {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
-
-@media (max-width: 992px) {
-    .main-header {
-        flex-direction: column;
-        padding: 1rem;
-    }
-                
-    #tabs-top {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-                
-    .department-tabs {
-        gap: 0.5rem;
-    }
-                
-    .department-tabs a {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
-}
             
-@media (max-width: 768px) {
-    #casualty-section, .gallery, #Brands {
-        padding: 2rem;
-    }
-                
-    .casualty-info-box h1 {
-        font-size: 2rem;
-    }
-    
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-                
-    .gallery-item p {
-        min-height: 50px; /* Slightly smaller on mobile */
-        padding: 0.7rem;
-    }
-                
-    .brand-logos img {
-        height: 40px;
-    }
-}
-
-/* WhatsApp Button */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -771,15 +613,16 @@ button:hover {
     justify-content: center;
     transition: background-color 0.3s ease;
 }
+
 .whatsapp-float img {
     width: 40px;
     height: 40px;
 }
+
 .whatsapp-float:hover {
     background-color: #1ebe5d;
 }
 
-/* --- Solutions container styling --- */
 .solutions-container {
     display: flex;
     max-width: 1200px;
@@ -788,7 +631,6 @@ button:hover {
     overflow: hidden;
 }
 
-/* Sidebar styling */
 .sidebar {
     width: 250px;
     background-color: #005f8c;
@@ -796,7 +638,6 @@ button:hover {
     padding: 20px;
 }
 
-/* Sidebar Heading */
 .solutions-heading {
     font-size: 1.5rem;
     font-weight: bold;
@@ -805,7 +646,6 @@ button:hover {
     border-bottom: 2px solid #fff;
 }
 
-/* Remove list bullets & spacing */
 .solutions-nav ul {
     list-style: none;
     padding: 0;
@@ -816,7 +656,6 @@ button:hover {
     margin-bottom: 12px;
 }
 
-/* Links styled like buttons */
 .solutions-nav a {
     display: block;
     padding: 10px 15px;
@@ -831,34 +670,18 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .solutions-nav a:hover {
     background-color: #f5f5f5;
     border-color: #999;
     color: #000;
 }
 
-/* ✅ Active link */
 .solutions-nav a.active {
-    background-color: #519d4f; /* Blue background */
-    color: #fff; /* White text */
+    background-color: #519d4f;
+    color: #fff;
     border-color: #007bff;
 }
 
-/* ✅ Mobile responsiveness */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;          /* sidebar spans full width */
-        padding: 15px;
-    }
-
-    .solutions-nav a {
-        width: 100%;          /* buttons full width */
-        font-size: 1rem;      /* larger for touch */
-    }
-}
-
-/* Dropdown menu styling */
 .solutions-dropdown-menu .dropbtn {
     padding: 0 10px;
 }
@@ -881,7 +704,7 @@ button:hover {
     list-style: none;
     padding: 0;
     margin: 5px 0 0 20px;
-    display: none; /* hidden by default */
+    display: none;
 }
 
 .dropdown-menu.active {
@@ -899,7 +722,6 @@ button:hover {
     background-color: #e0e0e0;
 }
 
-/* --- Main content styling --- */
 .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -914,7 +736,6 @@ button:hover {
     width: 100%;
 }
 
-/* Center image + equipment list */
 .content-wrapper {
     display: flex;
     flex-direction: column; 
@@ -931,7 +752,6 @@ button:hover {
     margin: 0 auto 20px auto; 
 }
 
-/* Equipment list */
 .equipment-list-section {
     display: flex;
     justify-content: center;
@@ -950,40 +770,6 @@ button:hover {
     margin: 6px 0;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    .solutions-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .solutions-heading {
-        text-align: center;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .solutions-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .solutions-nav li {
-        margin: 5px;
-    }
-
-    .equipment-list {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* --- Hamburger menu --- */
 .hamburger-menu {
     display: none; 
     flex-direction: column;
@@ -1002,60 +788,171 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-/* Mobile nav */
-#tabs-top {
-    display: flex;
-    gap: 15px;
-}
-
-/* Style for the active/current page link */
 .tabs-top .active-link {
-    color: #3f6089; /* A deep blue color for the text */
+    color: #3f6089;
     text-decoration: underline;
-    text-decoration-color: #3f6089; /* The same deep blue color for the underline */
+    text-decoration-color: #3f6089;
 }
 
+@media (max-width: 992px) {
+    #about {
+        flex-direction: column;
+    }
+                
+    #about img {
+        width: 100%;
+    }
+                
+    .main-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+                
+    #tabs-top {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+                
+    .hero-tagline h1 {
+        font-size: 2.5rem;
+    }
+                
+    .hero-tagline p {
+        font-size: 1.2rem;
+    }
+                
+    .department-tabs {
+        gap: 0.5rem;
+    }
+                
+    .department-tabs a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+            
 @media (max-width: 768px) {
     .hamburger-menu {
         display: flex;
     }
-
+    
     #tabs-top {
-        position: absolute;
-        top: 70px;
-        left: -100%; 
-        width: 100%;
-        background: rgb(69, 173, 88);
+        display:none;
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-        transition: left 0.3s ease;
+        background-color: var(--white);
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem 0;
     }
 
-    #tabs-top a, 
-    #tabs-top .dropbtn {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2rem;
-        padding: 10px;
-        display: block;
-        width: 100%;
+    .dropdown:hover .dropdown-content {
+        position: static;
+        box-shadow: none;
+    }
+
+    .dropdown-content a {
+        color: #000000;
+    }
+                
+    .product-image-container {
+        height: auto;
+    }
+
+    .product-image-container img {
+        height: auto;
+        object-fit: contain;
+    }
+                
+    .footer-content {
+        grid-template-columns: 1fr;
         text-align: center;
+    }
+    
+    .footer-section h4 {
+        margin-top: 1.5rem;
+    }
+
+    .footer-logo {
+        justify-content: center;
     }
 
     #tabs-top.active {
         left: 0;
     }
 
-    /* Animate the hamburger menu to an "X" when active */
-            .hamburger-menu.active span:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-            }
-            .hamburger-menu.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger-menu.active span:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-            }
-        }
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .solutions-nav a {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    .solutions-heading {
+        text-align: center;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .solutions-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .solutions-nav li {
+        margin: 5px;
+    }
+    
+    .equipment-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+                
+    section {
+        padding: 3rem 2rem;
+    }
+                
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+                
+    .brand-logos img {
+        height: 40px;
+    }
+                
+    #casualty-section, .gallery, #Brands {
+        padding: 2rem;
+    }
+                
+    .casualty-info-box h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+                
+    .gallery-item p {
+        min-height: 50px;
+        padding: 0.7rem;
+    }
+}

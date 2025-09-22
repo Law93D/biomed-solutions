@@ -135,157 +135,152 @@
                 }
             }
 
-            /* Contact Form Section */
+            /* ===== Contact Section ===== */
             .contact-form-section {
-                padding: 5rem 5%;
-                background-color: var(--light);
+                padding: 80px 20px;
+                background-color: #f4f7f9;
             }
-            
+
             .contact-form-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+                display: flex; /* Creates a side-by-side layout */
+                justify-content: center;
+                gap: 40px;
                 max-width: 1200px;
                 margin: 0 auto;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                padding: 40px;
             }
-            
-            .form-column h2 {
-                font-size: 2rem;
-                color: var(--primary);
-                margin-bottom: 2rem;
-                position: relative;
+
+            .form-column,
+            .contact-details-column {
+                flex: 1; /* Both columns take up equal space */
             }
-            
-            .form-column h2:after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                width: 60px;
-                height: 3px;
-                background-color: var(--accent);
+
+            /* ===== Form Styling ===== */
+            .contact-form h2 {
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 20px;
             }
-            
-            .contact-form {
-                display: flex;
-                flex-direction: column;
+
+            .contact-form .form-group {
+                margin-bottom: 20px;
             }
-            
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 0.1rem;
+
+            .contact-form label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #555;
             }
-            
-            .form-group label {
-                font-weight: 500;
-                color: var(--dark);
-            }
-            
-            .form-group input,
-            .form-group textarea {
-                padding: 12px 15px;
+
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="tel"],
+            .contact-form select,
+            .contact-form textarea {
+                width: 100%;
+                padding: 12px;
                 border: 1px solid #ddd;
-                border-radius: 4px;
-                font-family: inherit;
-                font-size: 1rem;
-                transition: border-color 0.3s ease;
+                border-radius: 5px;
+                font-size: 1em;
+                box-sizing: border-box; /* Ensures padding doesn't affect the width */
             }
-            
-            .form-group input:focus,
-            .form-group textarea:focus {
+
+            .contact-form select {
+                appearance: none; /* Removes default dropdown arrow */
+                background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%20197.6%20150.1%2060.7c-7.7-7.7-20.2-7.7-27.9%200L5.4%20197.6c-7.7%207.7-7.7%2020.2%200%2027.9s20.2%207.7%2027.9%200L136.2%20117.6c7.7-7.7%2020.2-7.7%2027.9%200L259.1%20225.5c7.7%207.7%2020.2%207.7%2027.9%200%207.8-7.7%207.8-20.2.1-27.9z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 12px center;
+                background-size: 10px;
+            }
+
+            .contact-form textarea {
+                resize: vertical; /* Allows users to resize vertically */
+            }
+
+            .contact-form input:focus,
+            .contact-form textarea:focus,
+            .contact-form select:focus {
+                border-color: #007bff; /* Highlights the input on focus */
                 outline: none;
-                border-color: var(--primary);
-                box-shadow: 0 0 0 2px rgba(0, 95, 140, 0.1);
-            }
-            
-            .form-group textarea {
-                resize: vertical;
-                min-height: 150px;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             }
 
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
+            .submit-btn {
                 width: 100%;
                 padding: 15px;
-                border: 2px solid #e2e8f0;
-                border-radius: 8px;
-                font-size: 1rem;
-                transition: border-color 0.3s ease;
-            }
-
-            .form-group input:focus,
-            .form-group select:focus,
-            .form-group textarea:focus {
-                outline: none;
-                border-color: #2c5aa0;
-            }
-            
-            .submit-btn {
                 background-color: var(--primary);
-                color: var(--white);
+                color: #fff;
                 border: none;
-                padding: 14px 25px;
-                border-radius: 4px;
-                font-size: 1rem;
-                font-weight: 500;
+                border-radius: 5px;
+                font-size: 1.1em;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                align-self: flex-start;
+                transition: background-color 0.3s ease;
             }
-            
+
             .submit-btn:hover {
-                background-color: rgb(38, 180, 38);
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                background-color: #346d41;
             }
-            
-            /* Contact Details Column */
+
+            /* ========================= */
+            /* ===== Details Styling ===== */
+            /* ========================= */
+
+            .contact-details-column {
+                padding: 20px;
+            }
+
             .contact-details-column h3 {
-                font-size: 1.5rem;
-                color: white;
-                margin-bottom: 1.5rem;
-            }
-            
-            .contact-info-item {
-                background-color: rgb(40, 123, 151);
-                padding: 2rem;
-                border-radius: 8px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                height: 100%;
-            }
-            .contact-info-item p {
-                color: white;
-                line-height: 1.5;
+                font-size: 1.8em;
+                color: var(--primary);
+                margin-bottom: 10px;
             }
 
-            #business-hours {
-                margin-top: 1rem;
-                font-size: 0.9rem;
-                color: white;
+            .contact-details-column p {
+                color: var(--primary);
+                line-height: 1.6;
             }
 
-            #business-hours h4 {
-                margin-bottom: 0.5rem;
-                font-weight: 600;
+            .business-hours {
+                display: grid;
+                grid-template-columns: 100px 1fr;
+                gap: 5px 20px;
+                margin-top: 15px;
             }
 
-            #business-hours p {
-                margin: 0.2rem 0;
+            .business-hours h4 {
+                font-weight: bold;
+                color: var(--primary);
+                margin: 0;
             }
 
-            @media (max-width: 768px) {
-                /* This rule changes the contact form layout to a single column on small screens */
+            .business-hours p {
+                margin: 0;
+            }
+
+            .button-link {
+                display: inline-block;
+                padding: 12px 25px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 20px;
+                transition: background-color 0.3s ease;
+            }
+
+            .button-link:hover {
+                background-color: #0056b3;
+            }
+
+
+            /* ========================= */
+            /* ===== Responsive Design ===== */
+            /* ========================= */
+            @media (max-width: 992px) {
                 .contact-form-container {
-                    grid-template-columns: 1fr;
-                }
-                .contact-form-section {
-                    padding: 3rem 2rem;
+                    flex-direction: column; /* Stacks columns vertically on smaller screens */
                 }
             }
         </style>
@@ -523,7 +518,6 @@
                                 </div>
                                 <br>
                                 <p>For urgent inquiries outside of business hours, please contact us via our WhatsApp number or use the contact form.</p>
-                                <a href="contact.html" class="button-link">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -562,8 +556,6 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="casualty.html">Equipment Supply</a></li>
-                            <li><a href="tech.html">Technical Repairs</a></li>
                             <li><a href="tech.html">Maintenance</a></li>
                             <li><a href="contact.html">Emergency Service</a></li>
                         </ul>

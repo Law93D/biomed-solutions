@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="Contact Biomed Solutions for expert medical equipment supply, installation, maintenance, and training services in Lesotho. We're here to support your healthcare facility's needs." />
         <title>Contact Us | Biomed Solutions</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+        <link rel="stylesheet" href="style.css" />
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3W2444SW"></script>
@@ -17,179 +17,7 @@
             gtag('config', 'G-XV3W2444SW');
         </script>
 
-        <style>
-            :root {
-                --primary: #005f8c;
-                --secondary: #00a0e1;
-                --accent: #ff6b00;
-                --light: #f8f9fa;
-                --dark: #212529;
-                --gray: #6c757d;
-                --white: #ffffff;
-            }
-            
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            body {
-                font-family: 'Poppins', sans-serif;
-                line-height: 1.6;
-                color: var(--dark);
-                background-color: var(--light);
-            }
-            
-            .main-header {
-                background-color: var(--white);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                position: fixed; /* fixed for always visible */
-                top: 0;
-                left: 0;
-                width: 100%;
-                min-height: 120px;
-                z-index: 1000;
-                padding: 0.5rem 8%;
-            }
-
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            /* Logo */
-            #logo img {
-                max-height: 102px;
-                transition: transform 0.3s ease;
-            }
-            #logo img:hover {
-                transform: scale(1.05);
-            }
-
-            /* Navigation - Desktop */
-            #tabs-top {
-                display: flex;
-                align-items: center;
-                gap: 1.5rem;
-            }
-            #tabs-top a {
-                text-decoration: none;
-                color: var(--dark);
-                font-weight: 600;
-                font-size: 1rem;
-                transition: color 0.3s ease;
-                position: relative;
-                padding: 0.5rem 0;
-            }
-            #tabs-top a.active {
-                color: var(--primary);
-            }
-            #tabs-top a.active:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: var(--primary);
-            }
-            #tabs-top a:hover {
-                color: var(--primary);
-            }
-            #tabs-top a:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: var(--primary);
-                transition: width 0.3s ease;
-            }
-            #tabs-top a:hover:after {
-                width: 100%;
-            }
-
-            /* Dropdown Menu */
-            .dropdown {
-                position: relative;
-            }
-            .dropbtn {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-                font-family: inherit;
-                font-size: 1rem;
-                font-weight: 500;
-                color: var(--dark);
-                padding: 0.5rem 0;
-            }
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: var(--white);
-                min-width: 250px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-                z-index: 1;
-                border-radius: 10px;
-                overflow: hidden;
-                padding-left: 30px;
-            }
-            .dropdown-content a {
-                color: var(--dark);
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                transition: background-color 0.3s ease;
-            }
-            .dropdown-content a:hover {
-                color: var(--primary);
-            }
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            /* Hamburger Menu - hidden on desktop */
-            .hamburger-menu {
-                display: none;
-                flex-direction: column;
-                cursor: pointer;
-            }
-            .hamburger-menu .bar {
-                height: 3px;
-                width: 25px;
-                background-color: var(--dark);
-                margin: 4px 0;
-                transition: 0.3s;
-            }
-
-            /* Mobile Styles */
-            @media (max-width: 768px) {
-                .hamburger-menu {
-                    display: flex;
-                }
-                #tabs-top {
-                    display: none;
-                    flex-direction: column;
-                    background-color: rgb(69, 173, 88);
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    width: 100%;
-                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                    padding: 1rem 0;
-                }
-                #tabs-top.show {
-                    display: flex;
-                }
-                .dropdown:hover .dropdown-content {
-                    position: static;
-                    box-shadow: none;
-                }
-            }
-            
+        <style>                        
             /* Contact Hero Section */
             .contact-hero {
                 background: linear-gradient(rgba(0, 95, 140, 0.2), rgba(0, 95, 140, 0.1)), 
@@ -199,6 +27,7 @@
                 height: 100%;
                 text-align: center;
                 color: var(--white);
+                margin-top: 8px;
             }
             
             .contact-hero h1 {
@@ -285,136 +114,92 @@
                 text-decoration: none;
             }
             
-            /* Contact Form Section */
+            /* ===== Contact Section ===== */
             .contact-form-section {
-                padding: 5rem 5%;
-                background-color: var(--light);
+                padding: 80px 20px;
+                background-color: #f4f7f9;
             }
-            
+
             .contact-form-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+                display: flex; /* Creates a side-by-side layout */
+                justify-content: center;
+                gap: 40px;
                 max-width: 1200px;
                 margin: 0 auto;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                padding: 40px;
             }
-            
-            .form-column h2 {
-                font-size: 2rem;
-                color: var(--primary);
-                margin-bottom: 2rem;
-                position: relative;
+
+            .form-column,
+            .contact-details-column {
+                flex: 1; /* Both columns take up equal space */
             }
-            
-            .form-column h2:after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                width: 60px;
-                height: 3px;
-                background-color: var(--accent);
+
+            /* ===== Form Styling ===== */
+            .contact-form h2 {
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 20px;
             }
-            
-            .contact-form {
-                display: flex;
-                flex-direction: column;
+
+            .contact-form .form-group {
+                margin-bottom: 20px;
             }
-            
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 0.1rem;
+
+            .contact-form label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #555;
             }
-            
-            .form-group label {
-                font-weight: 500;
-                color: var(--dark);
-            }
-            
-            .form-group input,
-            .form-group textarea {
-                padding: 12px 15px;
+
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="tel"],
+            .contact-form select,
+            .contact-form textarea {
+                width: 100%;
+                padding: 12px;
                 border: 1px solid #ddd;
-                border-radius: 4px;
-                font-family: inherit;
-                font-size: 1rem;
-                transition: border-color 0.3s ease;
+                border-radius: 5px;
+                font-size: 1em;
+                box-sizing: border-box; /* Ensures padding doesn't affect the width */
             }
-            
-            .form-group input:focus,
-            .form-group textarea:focus {
+
+            .contact-form select {
+                appearance: none; /* Removes default dropdown arrow */
+                background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%20197.6%20150.1%2060.7c-7.7-7.7-20.2-7.7-27.9%200L5.4%20197.6c-7.7%207.7-7.7%2020.2%200%2027.9s20.2%207.7%2027.9%200L136.2%20117.6c7.7-7.7%2020.2-7.7%2027.9%200L259.1%20225.5c7.7%207.7%2020.2%207.7%2027.9%200%207.8-7.7%207.8-20.2.1-27.9z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 12px center;
+                background-size: 10px;
+            }
+
+            .contact-form textarea {
+                resize: vertical; /* Allows users to resize vertically */
+            }
+
+            .contact-form input:focus,
+            .contact-form textarea:focus,
+            .contact-form select:focus {
+                border-color: #007bff; /* Highlights the input on focus */
                 outline: none;
-                border-color: var(--primary);
-                box-shadow: 0 0 0 2px rgba(0, 95, 140, 0.1);
-            }
-            
-            .form-group textarea {
-                resize: vertical;
-                min-height: 150px;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             }
 
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                width: 100%;
-                padding: 15px;
-                border: 2px solid #e2e8f0;
-                border-radius: 8px;
-                font-size: 1rem;
-                transition: border-color 0.3s ease;
-            }
-
-            .form-group input:focus,
-            .form-group select:focus,
-            .form-group textarea:focus {
-                outline: none;
-                border-color: #2c5aa0;
-            }
-            
             .submit-btn {
-                background-color: var(--primary);
-                color: var(--white);
-                border: none;
-                padding: 14px 25px;
-                border-radius: 4px;
-                font-size: 1rem;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                align-self: flex-start;
-            }
-            
-            .submit-btn:hover {
-                background-color: var(--secondary);
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
                 width: 100%;
                 padding: 15px;
-                border: 2px solid #e2e8f0;
-                border-radius: 8px;
-                font-size: 1rem;
-                transition: border-color 0.3s ease;
+                background-color: var(--primary);
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1em;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
             }
 
-            .form-group input:focus,
-            .form-group select:focus,
-            .form-group textarea:focus {
-                outline: none;
-                border-color: #2c5aa0;
+            .submit-btn:hover {
+                background-color: #346d41;
             }
             
             /* Contact Details Column */
@@ -488,7 +273,7 @@
                 color: var(--gray);
                 max-width: 800px;
                 margin: 0 auto 3rem;
-                font-size: 0.98rem;
+                font-size: 1.1rem;
             }
             
             .brand-logos {
@@ -819,7 +604,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Your Message*</label>
-                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                    <textarea id="message" name="message" rows="7" required></textarea>
                                 </div>
                                 <button type="submit" class="submit-btn">Submit Now</button>
                             </form>
@@ -829,26 +614,20 @@
                             <h3>Need Assistance? Reach Out Today.</h3>
                             <div class="contact-info-item">
                                 <h4>Medical Equipment & Systems</h4>
-                                <br>
                                 <h2>Maximize Performance with Biomed Solutions Planned Maintenance & Installations</h2>
-                                <br>
                                 <p>
                                     We provide expert calibration, servicing, installation, and training for neonatal, theatre, dental, and laboratory equipment, as well as Medical Gas Pipeline Systems (MGPS).
                                 </p>
-                                <br>
                                 <ul>
                                   <li>
                                     <strong>Care:</strong> Our engineers ensure all work meets OEM and global standards, maximizing uptime and safety.
                                   </li>
-                                  <br>
                                     <li>
                                         <strong>Cost & Time Savings:</strong> Reduce breakdowns, avoid costly repairs, and keep operations running smoothly with our planned maintenance and tailored service plans.
                                     </li>
-                                    <br>
                                     <li>
                                         <strong>Flexible Solutions:</strong> From equipment servicing to MGPS installations and staff training, we adapt to your facility’s needs.
                                     </li>
-                                    <br>
                                     <li>
                                         <strong>Get in Touch Today:</strong> Call, email, or WhatsApp us for a free quote. Extended service hours available in select areas.
                                     </li>
@@ -892,8 +671,6 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="casualty.html">Equipment Supply</a></li>
-                            <li><a href="tech.html">Technical Repairs</a></li>
                             <li><a href="tech.html">Maintenance</a></li>
                             <li><a href="contact.html">Emergency Service</a></li>
                         </ul>
