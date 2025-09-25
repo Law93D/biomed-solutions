@@ -20,93 +20,7 @@
     </script>
 
     <style>
-        .about-heading {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-                
-        .about-heading:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto;
-        }
-                
-        .about-container {
-            display: flex;
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-                
-        #who-we-are, #our-expertise {
-            flex: 1;
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-                
-        #who-we-are:hover, #our-expertise:hover {
-            transform: translateY(-5px);
-        }
-                
-        #who-we-are h3, #our-expertise h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
-        }
-                
-        .about-who, .about-expertise {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-                
-        .vision-mission-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 5rem 5%;
-            color: var(--white);
-        }
-                
-        .vision-mission-box {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
-        }
         
-        .vision-mission-box h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .vision-mission-box h2:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-        
-        .vision-mission-box p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
     </style>
 </head>
 <body>
@@ -119,10 +33,10 @@
                 </div>
 
                 <!-- Hamburger Icon -->
-                <div class="hamburger-menu" onclick="toggleMenu()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 <!-- Navigation -->
@@ -297,35 +211,50 @@
     <!-- END: WhatsApp Floating Button -->
 
     <script>
-            document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const tabsTop = document.getElementById('tabs-top');
+                const hamburgerMenu = document.querySelector('.hamburger-menu');
+                const dropBtns = document.querySelectorAll('.dropbtn');
 
-                // Select all top-level navigation links and iterate through them
-                document.querySelectorAll('#tabs-top > a').forEach(link => {
-                    // Check if the link's href matches the current page
-                    if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
+                // ✅ Highlight current page in navbar
+                document.querySelectorAll('#tabs-top a').forEach(link => {
+                    const href = link.getAttribute('href')
+                        .replace('./', '') // remove leading "./"
+                        .replace('/', '')  // remove leading "/"
+                        || 'index.html';
+                    if (href === currentPage) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // ✅ Handle product dropdown highlighting
+                const productPages = [
+                    'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
+                    'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
+                ];
+                if (productPages.includes(currentPage) && dropBtns[0]) {
+                    dropBtns[0].classList.add('active');
+                }
+
+                // ✅ Handle solutions dropdown highlighting
+                const solutionsPages = [
+                    'solutions.html', 'delivery.html', 'sterilization.html',
+                    'laboratory.html', 'wards.html', 'dental_clinic.html',
+                    'mgps.html', 'psa.html'
+                ];
+                if (solutionsPages.includes(currentPage) && dropBtns[1]) {
+                    dropBtns[1].classList.add('active');
+                }
+
+                // ✅ Mobile menu toggle (hamburger)
+                if (hamburgerMenu && tabsTop) {
+                    hamburgerMenu.addEventListener('click', () => {
+                        hamburgerMenu.classList.toggle('active');
+                        tabsTop.classList.toggle('active');
+                    });
                 }
             });
-
-        // Handle dropdown links separately
-        const dropdownPages = [
-            'casualty.html', 'critical.html', 'cssd.html', 'lab.html',
-            'opt.html', 'paeds.html', 'radiology.html', 'dental.html', 'oxygen.html'
-        ];
-
-            // Check if the current page is one of the dropdown pages
-            if (dropdownPages.includes(currentPage)) {
-                // Add the 'active' class to the dropdown button
-                document.querySelector('.dropbtn').classList.add('active');
-            }
-
-            // Toggle mobile menu visibility
-            window.toggleMenu = function() {
-                const tabsTop = document.getElementById('tabs-top');
-                tabsTop.classList.toggle('show');
-            }
-        });
     </script>
 </body>
 </html>
